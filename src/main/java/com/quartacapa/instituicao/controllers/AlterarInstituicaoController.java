@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -21,7 +22,7 @@ public class AlterarInstituicaoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<InstituicaoResponse> alterarInstituicao
-            (@PathVariable String id, @RequestBody InstituicaoRequest request) {
+            (@PathVariable String id, @RequestBody  @Valid InstituicaoRequest request) {
 
         Optional<Instituicao> possivelInstituicao = repository.findById(id);
 

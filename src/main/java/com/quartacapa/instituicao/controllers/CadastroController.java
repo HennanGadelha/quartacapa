@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -22,7 +23,7 @@ public class CadastroController {
     private InstituicaoRepository repository;
 
     @PostMapping
-    public ResponseEntity<?> cadastrarInstituicao(@RequestBody InstituicaoRequest request){
+    public ResponseEntity<?> cadastrarInstituicao(@RequestBody @Valid InstituicaoRequest request){
 
         Instituicao instituicao = request.toModel();
 
