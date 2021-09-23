@@ -22,7 +22,7 @@ public class AlterarInstituicaoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<InstituicaoResponse> alterarInstituicao
-            (@PathVariable String id, @RequestBody  @Valid InstituicaoRequest request) {
+            (@PathVariable String id, @RequestBody @Valid InstituicaoRequest request) {
 
         Optional<Instituicao> possivelInstituicao = repository.findById(id);
 
