@@ -1,4 +1,4 @@
-package com.quartacapa.usuario.controllers.dto;
+package com.quartacapa.usuario.controllers.dto.request;
 
 import com.quartacapa.config.validacoes.uniqueValue.UniqueValue;
 import com.quartacapa.instituicao.model.Instituicao;

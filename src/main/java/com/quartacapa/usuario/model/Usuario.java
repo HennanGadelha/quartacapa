@@ -13,11 +13,7 @@ public class Usuario {
     private String email;
     private String cpf;
     private String numeroCelular;
-
-    // utilizou a @entity para mapear a classe
-    // utilizou o @id para mapear o id
-    // usar construtor vazio
-
+    
     @Deprecated
     public Usuario(){}
 

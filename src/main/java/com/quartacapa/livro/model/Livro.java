@@ -2,8 +2,7 @@ package com.quartacapa.livro.model;
 
 import com.quartacapa.disciplina.model.Disciplina;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.UUID;
 
@@ -20,14 +19,26 @@ public class Livro {
     private BigDecimal valor;
     private String descricaoEstado;
     private Boolean disponivelParaDoacao;
-    //private Disciplina disciplina;
-    //private Usuario usuario; ??????????
-    //private Enum classe;
+
+    @OneToOne
+    private Disciplina disciplina;
+
+    @Enumerated(EnumType.STRING)
+    private AnoEscolarEnum anoEscolar;
 
     @Deprecated
     public Livro(){}
 
-    public Livro(String isbn, String titulo, String autor, String editora, Integer ano, BigDecimal valor, String descricaoEstado, Boolean disponivelParaDoacao) {
+    public Livro(String isbn,
+                 String titulo,
+                 String autor,
+                 String editora,
+                 Integer ano,
+                 BigDecimal valor,
+                 String descricaoEstado,
+                 Boolean disponivelParaDoacao,
+                 AnoEscolarEnum anoEscolar,
+                 Disciplina disciplina) {
 
         this.id = UUID.randomUUID().toString();
         this.isbn = isbn;
@@ -38,8 +49,8 @@ public class Livro {
         this.valor = valor;
         this.descricaoEstado = descricaoEstado;
         this.disponivelParaDoacao = disponivelParaDoacao;
-        //this.disciplina = disciplina;
-        //this.classe = classe;
+        this.anoEscolar = anoEscolar;
+        this.disciplina = disciplina;
     }
 
 
@@ -112,19 +123,24 @@ public class Livro {
         this.disponivelParaDoacao = disponivelParaDoacao;
     }
 
-//    public Disciplina getDisciplina() {
-//        return disciplina;
-//    }
-//
-//    public void setDisciplina(Disciplina disciplina) {
-//        this.disciplina = disciplina;
-//    }
-//
-//    public Enum getClasse() {
-//        return classe;
-//    }
-//
-//    public void setClasse(Enum classe) {
-//        this.classe = classe;
-//    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
+
+
+    public AnoEscolarEnum getAnoEscolar() {
+        return anoEscolar;
+    }
+
+    public void setAnoEscolar(AnoEscolarEnum anoEscolar) {
+        this.anoEscolar = anoEscolar;
+    }
 }

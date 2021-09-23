@@ -1,5 +1,7 @@
 package com.quartacapa.livro.controllers.dto;
 
+import com.quartacapa.livro.model.AnoEscolarEnum;
+
 import java.math.BigDecimal;
 
 public class LivroResponse {
@@ -13,11 +15,24 @@ public class LivroResponse {
     private BigDecimal valor;
     private String descricaoEstado;
     private Boolean disponivelParaDoacao;
+    private String disciplina;
+
+    private AnoEscolarEnum anoEscolar;
 
     @Deprecated
     LivroResponse(){}
 
-    public LivroResponse(String id, String isbn, String titulo, String autor, String editora, Integer ano, BigDecimal valor, String descricaoEstado, Boolean disponivelParaDoacao) {
+    public LivroResponse(String id,
+                         String isbn,
+                         String titulo,
+                         String autor,
+                         String editora,
+                         Integer ano,
+                         BigDecimal valor,
+                         String descricaoEstado,
+                         Boolean disponivelParaDoacao,
+                         AnoEscolarEnum anoEscolar,
+                         String disciplina) {
         this.id = id;
         this.isbn = isbn;
         this.titulo = titulo;
@@ -27,6 +42,8 @@ public class LivroResponse {
         this.valor = valor;
         this.descricaoEstado = descricaoEstado;
         this.disponivelParaDoacao = disponivelParaDoacao;
+        this.anoEscolar = anoEscolar;
+        this.disciplina = disciplina;
     }
 
 
@@ -60,5 +77,13 @@ public class LivroResponse {
 
     public Boolean getDisponivelParaDoacao() {
         return disponivelParaDoacao;
+    }
+
+    public AnoEscolarEnum getAnoEscolar() {
+        return anoEscolar;
+    }
+
+    public String getDisciplina() {
+        return disciplina;
     }
 }

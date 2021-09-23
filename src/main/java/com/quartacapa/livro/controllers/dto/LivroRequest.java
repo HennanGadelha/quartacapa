@@ -1,6 +1,7 @@
 package com.quartacapa.livro.controllers.dto;
 
-import com.quartacapa.config.validacoes.uniqueValue.UniqueValue;
+import com.quartacapa.disciplina.model.Disciplina;
+import com.quartacapa.livro.model.AnoEscolarEnum;
 import com.quartacapa.livro.model.Livro;
 
 import javax.validation.constraints.NotBlank;
@@ -24,14 +25,25 @@ public class LivroRequest {
     private String descricaoEstado;
     @NotNull
     private Boolean disponivelParaDoacao;
-    //private Disciplina disciplina;
-    //private Usuario usuario; ??????????
-    //private Enum classe;
+
+    private String idDisciplina;
+
+
+    private AnoEscolarEnum anoEscolar;
 
     @Deprecated
     public LivroRequest(){}
 
-    public LivroRequest(String isbn, String titulo, String autor, String editora, Integer ano, BigDecimal valor, String descricaoEstado, Boolean disponivelParaDoacao) {
+    public LivroRequest(String isbn,
+                        String titulo,
+                        String autor,
+                        String editora,
+                        Integer ano,
+                        BigDecimal valor,
+                        String descricaoEstado,
+                        Boolean disponivelParaDoacao,
+                        AnoEscolarEnum anoEscolar,
+                        String idDisciplina) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
@@ -40,10 +52,21 @@ public class LivroRequest {
         this.valor = valor;
         this.descricaoEstado = descricaoEstado;
         this.disponivelParaDoacao = disponivelParaDoacao;
+        this.anoEscolar = anoEscolar;
+        this.idDisciplina = idDisciplina;
     }
 
-    public Livro toModel(){
-        return new Livro(this.isbn, this.titulo, this.autor, this.editora, this.ano, this.valor, this.descricaoEstado, this.disponivelParaDoacao);
+    public Livro toModel(Disciplina disciplina){
+        return new Livro(this.isbn,
+                this.titulo,
+                this.autor,
+                this.editora,
+                this.ano,
+                this.valor,
+                this.descricaoEstado,
+                this.disponivelParaDoacao,
+                this.anoEscolar,
+                disciplina);
     }
 
     public String getTitulo() {
@@ -78,4 +101,11 @@ public class LivroRequest {
         return disponivelParaDoacao;
     }
 
+    public AnoEscolarEnum getAnoEscolar() {
+        return anoEscolar;
+    }
+
+    public String getIdDisciplina() {
+        return idDisciplina;
+    }
 }

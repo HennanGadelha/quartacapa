@@ -1,7 +1,7 @@
 package com.quartacapa.usuario.controllers;
 
-import com.quartacapa.usuario.controllers.dto.UsuarioRequest;
-import com.quartacapa.usuario.controllers.dto.UsuarioResponse;
+import com.quartacapa.usuario.controllers.dto.request.UsuarioRequest;
+import com.quartacapa.usuario.controllers.dto.response.UsuarioResponse;
 import com.quartacapa.usuario.model.Usuario;
 import com.quartacapa.usuario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;

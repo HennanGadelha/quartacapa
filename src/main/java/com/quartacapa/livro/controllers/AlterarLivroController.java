@@ -33,7 +33,18 @@ public class AlterarLivroController {
 
         repository.save(livro);
 
-        LivroResponse response = new LivroResponse(livro.getId(), livro.getIsbn(), livro.getTitulo(), livro.getAutor(), livro.getEditora(), livro.getAno(), livro.getValor(), livro.getDescricaoEstado(), livro.getDisponivelParaDoacao());
+        LivroResponse response =
+                new LivroResponse(livro.getId(),
+                        livro.getIsbn(),
+                        livro.getTitulo(),
+                        livro.getAutor(),
+                        livro.getEditora(),
+                        livro.getAno(),
+                        livro.getValor(),
+                        livro.getDescricaoEstado(),
+                        livro.getDisponivelParaDoacao(),
+                        livro.getAnoEscolar(),
+                        livro.getDisciplina().getNome());
 
         return ResponseEntity.ok().body(response);
 

@@ -1,7 +1,7 @@
 package com.quartacapa.usuario.controllers;
 
-import com.quartacapa.usuario.controllers.dto.UsuarioRequest;
-import com.quartacapa.usuario.controllers.dto.UsuarioResponse;
+import com.quartacapa.usuario.controllers.dto.request.AlterarUsuarioRequest;
+import com.quartacapa.usuario.controllers.dto.response.UsuarioResponse;
 import com.quartacapa.usuario.model.Usuario;
 
 import com.quartacapa.usuario.repository.UsuarioRepository;
@@ -22,7 +22,7 @@ public class AlterarUsuarioController {
 
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioResponse> alterarUsuario
-            (@PathVariable String id, @RequestBody @Valid UsuarioRequest request) {
+            (@PathVariable String id, @RequestBody @Valid AlterarUsuarioRequest request) {
 
         Optional<Usuario> possivelUsuario = repository.findById(id);
 
@@ -35,17 +35,13 @@ public class AlterarUsuarioController {
         UsuarioResponse response = new UsuarioResponse(usuario.getId(), usuario.getNome(), usuario.getEmail(),
                 usuario.getCpf(),usuario.getNumeroCelular());
 
-
-
-
         return ResponseEntity.ok().body(response);
 
     }
 
-    public void updateData(Usuario usuarioAlterado, UsuarioRequest request) {
+    public void updateData(Usuario usuarioAlterado, AlterarUsuarioRequest request) {
         usuarioAlterado.setNome(request.getNome());
         usuarioAlterado.setEmail(request.getEmail());
-        usuarioAlterado.setCpf(request.getCpf());
         usuarioAlterado.setNumeroCelular(request.getNumeroCelular());
     }
 

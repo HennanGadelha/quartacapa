@@ -1,4 +1,4 @@
-package com.quartacapa.usuario.controllers.dto;
+package com.quartacapa.usuario.controllers.dto.response;
 
 public class UsuarioResponse {
 

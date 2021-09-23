@@ -1,6 +1,6 @@
 package com.quartacapa.usuario.controllers;
 
-import com.quartacapa.usuario.controllers.dto.UsuarioResponse;
+import com.quartacapa.usuario.controllers.dto.response.UsuarioResponse;
 import com.quartacapa.usuario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
