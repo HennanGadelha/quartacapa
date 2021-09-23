@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -20,7 +21,7 @@ public class AlterarDisciplinaController {
 
     @PutMapping("/{id}")
     public ResponseEntity<DisciplinaResponse> alterarDisciplina
-            (@PathVariable String id, @RequestBody DisciplinaRequest request) {
+            (@PathVariable String id, @RequestBody @Valid DisciplinaRequest request) {
 
         Optional<Disciplina> possivelDisciplina = repository.findById(id);
 
