@@ -1,9 +1,15 @@
 package com.quartacapa.instituicao.controllers.dto;
 
+import com.quartacapa.config.validacoes.uniqueValue.UniqueValue;
 import com.quartacapa.instituicao.model.Instituicao;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class InstituicaoRequest {
 
+    @NotNull @NotEmpty @NotBlank @UniqueValue(domainClass = Instituicao.class, fieldName = "nome")
     private String nome;
 
     @Deprecated
