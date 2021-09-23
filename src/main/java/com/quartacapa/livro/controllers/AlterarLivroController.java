@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -21,7 +22,8 @@ public class AlterarLivroController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<LivroResponse> alterarLivro(@PathVariable String id, @RequestBody LivroRequest request) {
+    public ResponseEntity<LivroResponse> alterarLivro
+            (@PathVariable String id, @RequestBody @Valid LivroRequest request) {
 
         Optional<Livro> possivelLivro = repository.findById(id);
 

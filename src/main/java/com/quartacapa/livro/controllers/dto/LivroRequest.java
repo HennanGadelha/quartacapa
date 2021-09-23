@@ -1,18 +1,28 @@
 package com.quartacapa.livro.controllers.dto;
 
+import com.quartacapa.config.validacoes.uniqueValue.UniqueValue;
 import com.quartacapa.livro.model.Livro;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 public class LivroRequest {
 
     private String isbn;
+    @NotNull @NotEmpty @NotBlank
     private String titulo;
+    @NotNull @NotEmpty @NotBlank
     private String autor;
     private String editora;
     private Integer ano;
+    @NotNull @Positive
     private BigDecimal valor;
+    @NotNull @NotEmpty @NotBlank
     private String descricaoEstado;
+    @NotNull
     private Boolean disponivelParaDoacao;
     //private Disciplina disciplina;
     //private Usuario usuario; ??????????
