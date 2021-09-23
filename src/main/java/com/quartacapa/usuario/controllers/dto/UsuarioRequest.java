@@ -1,12 +1,23 @@
 package com.quartacapa.usuario.controllers.dto;
 
+import com.quartacapa.config.validacoes.uniqueValue.UniqueValue;
+import com.quartacapa.instituicao.model.Instituicao;
 import com.quartacapa.usuario.model.Usuario;
+import org.hibernate.validator.constraints.br.CPF;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class UsuarioRequest {
-
+    @NotNull @NotBlank @NotEmpty
     private String nome;
+    @Email @NotNull @NotBlank @NotEmpty @UniqueValue(domainClass = Usuario.class, fieldName = "email")
     private String email;
+    @CPF @NotNull @NotBlank @NotEmpty @UniqueValue(domainClass = Usuario.class, fieldName = "cpf")
     private String cpf;
+    @NotNull @NotBlank @NotEmpty
     private String numeroCelular;
 
     @Deprecated

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -21,7 +22,7 @@ public class AlterarUsuarioController {
 
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioResponse> alterarUsuario
-            (@PathVariable String id, @RequestBody UsuarioRequest request) {
+            (@PathVariable String id, @RequestBody @Valid UsuarioRequest request) {
 
         Optional<Usuario> possivelUsuario = repository.findById(id);
 

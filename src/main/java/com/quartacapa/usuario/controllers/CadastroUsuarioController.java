@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -22,7 +23,7 @@ public class CadastroUsuarioController {
     private UsuarioRepository repository;
 
     @PostMapping
-    public ResponseEntity<?> cadastrarUsuario(@RequestBody UsuarioRequest request){
+    public ResponseEntity<?> cadastrarUsuario(@RequestBody @Valid UsuarioRequest request){
 
         Usuario usuario = request.toModel();
 
