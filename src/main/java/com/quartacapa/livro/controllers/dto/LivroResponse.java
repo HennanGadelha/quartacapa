@@ -2,6 +2,8 @@ package com.quartacapa.livro.controllers.dto;
 
 import com.quartacapa.livro.model.AnoEscolarEnum;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.math.BigDecimal;
 
 public class LivroResponse {
@@ -17,7 +19,8 @@ public class LivroResponse {
     private Boolean disponivelParaDoacao;
     private String disciplina;
 
-    private AnoEscolarEnum anoEscolar;
+    @Enumerated(EnumType.STRING)
+    private String anoEscolar;
 
     @Deprecated
     LivroResponse(){}
@@ -31,7 +34,7 @@ public class LivroResponse {
                          BigDecimal valor,
                          String descricaoEstado,
                          Boolean disponivelParaDoacao,
-                         AnoEscolarEnum anoEscolar,
+                         String anoEscolar,
                          String disciplina) {
         this.id = id;
         this.isbn = isbn;
@@ -79,7 +82,7 @@ public class LivroResponse {
         return disponivelParaDoacao;
     }
 
-    public AnoEscolarEnum getAnoEscolar() {
+    public String getAnoEscolar() {
         return anoEscolar;
     }
 

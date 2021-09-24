@@ -26,7 +26,7 @@ public class ListarTodosLivrosController {
 
         repository.findAll()
                 .stream().map(livro -> livros
-                .add(new LivroResponse(livro.getId(), livro.getIsbn(), livro.getTitulo(), livro.getAutor(), livro.getEditora(), livro.getAno(), livro.getValor(), livro.getDescricaoEstado(), livro.getDisponivelParaDoacao(),livro.getAnoEscolar() ,livro.getDisciplina().getNome())
+                .add(new LivroResponse(livro.getId(), livro.getIsbn(), livro.getTitulo(), livro.getAutor(), livro.getEditora(), livro.getAno(), livro.getValor(), livro.getDescricaoEstado(), livro.getDisponivelParaDoacao(),livro.getAnoEscolar().toString() ,livro.getDisciplina().getNome())
                 )).toArray();
 
 

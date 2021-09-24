@@ -1,7 +1,13 @@
 package com.quartacapa.usuario.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.quartacapa.anuncios.model.Anuncio;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -13,6 +19,12 @@ public class Usuario {
     private String email;
     private String cpf;
     private String numeroCelular;
+
+    //lista de anuncios
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "usuario")
+    private List<Anuncio> anuncios = new ArrayList<Anuncio>();
 
     @Deprecated
     public Usuario(){}
@@ -60,4 +72,13 @@ public class Usuario {
     public void setNumeroCelular(String numeroCelular) {
         this.numeroCelular = numeroCelular;
     }
+
+    public List<Anuncio> getAnuncios() {
+        return anuncios;
+    }
+
+    public void addAnuncio(Anuncio anuncio){
+        this.anuncios.add(anuncio);
+    }
+
 }

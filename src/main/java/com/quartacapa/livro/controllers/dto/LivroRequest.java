@@ -69,6 +69,9 @@ public class LivroRequest {
                 disciplina);
     }
 
+
+
+
     public String getTitulo() {
         return titulo;
     }

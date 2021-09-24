@@ -33,7 +33,7 @@ public class AlterarUsuarioController {
         repository.save(usuario);
 
         UsuarioResponse response = new UsuarioResponse(usuario.getId(), usuario.getNome(), usuario.getEmail(),
-                usuario.getCpf(),usuario.getNumeroCelular());
+                usuario.getCpf(),usuario.getNumeroCelular(), usuario.getAnuncios());
 
         return ResponseEntity.ok().body(response);
 
