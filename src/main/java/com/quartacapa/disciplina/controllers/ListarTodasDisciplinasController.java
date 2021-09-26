@@ -2,8 +2,10 @@ package com.quartacapa.disciplina.controllers;
 
 import com.quartacapa.disciplina.controllers.dto.DisciplinaResponse;
 import com.quartacapa.disciplina.repository.DisciplinaRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(("/api/v1/disciplinas"))
+@CrossOrigin(origins = "*")
 public class ListarTodasDisciplinasController {
 
     @Autowired
@@ -20,6 +23,7 @@ public class ListarTodasDisciplinasController {
 
 
     @GetMapping
+    @ApiOperation(value = "Retorna uma lista com todas as Disciplinas cadastradas")
     public ResponseEntity<List<?>> listarTodas(){
 
         List<DisciplinaResponse> disciplinas = new ArrayList<>();

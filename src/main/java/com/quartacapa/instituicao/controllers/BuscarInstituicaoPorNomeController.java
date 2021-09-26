@@ -3,17 +3,16 @@ package com.quartacapa.instituicao.controllers;
 import com.quartacapa.instituicao.controllers.dto.InstituicaoResponse;
 import com.quartacapa.instituicao.model.Instituicao;
 import com.quartacapa.instituicao.repository.InstituicaoRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/instituicoes"))
+@CrossOrigin(origins = "*")
 public class BuscarInstituicaoPorNomeController {
 
 
@@ -21,6 +20,7 @@ public class BuscarInstituicaoPorNomeController {
     private InstituicaoRepository repository;
 
     @GetMapping("/filtro")
+    @ApiOperation(value = "Retorna as informações de uma Instituição cujo nome foi especificado")
     public ResponseEntity<InstituicaoResponse> buscarPorNome(@RequestParam("nome") String nome){
 
         Optional<Instituicao> possivelInstituicao =  repository.findByNome(nome);

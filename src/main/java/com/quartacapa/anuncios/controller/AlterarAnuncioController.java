@@ -4,6 +4,7 @@ import com.quartacapa.anuncios.controller.dto.request.AlterarAnuncioRequest;
 import com.quartacapa.anuncios.controller.dto.response.AnuncioResponse;
 import com.quartacapa.anuncios.model.Anuncio;
 import com.quartacapa.anuncios.repository.AnuncioRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class AlterarAnuncioController {
 
     @Autowired
@@ -20,6 +21,7 @@ public class AlterarAnuncioController {
 
 
     @PutMapping("/{id}")
+    @ApiOperation(value = "Atualiza um Anúncio já existente cujo id foi especificado")
     public ResponseEntity<AnuncioResponse> alterarAnuncio(@PathVariable String id, @RequestBody AlterarAnuncioRequest request){
 
         Optional<Anuncio> possivelAnuncio = anuncioRepository.findById(id);

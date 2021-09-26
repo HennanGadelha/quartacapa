@@ -8,6 +8,7 @@ import com.quartacapa.livro.model.Livro;
 import com.quartacapa.livro.repository.LivroRepository;
 import com.quartacapa.usuario.model.Usuario;
 import com.quartacapa.usuario.repository.UsuarioRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +17,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
-@CrossOrigin(origins = "http://localhost:4200")
-public class CadastroAnuncioController {
+@CrossOrigin(origins = "*")
+public class CadastrarAnuncioController {
 
     @Autowired
     private AnuncioRepository anuncioRepository;
@@ -30,6 +31,7 @@ public class CadastroAnuncioController {
 
 
     @PostMapping
+    @ApiOperation(value = "Salva o cadastro inicial de um novo Anúncio")
     public ResponseEntity<?> cadastroAnuncio(@RequestBody CadastroAnuncioRequest request ){
 
 

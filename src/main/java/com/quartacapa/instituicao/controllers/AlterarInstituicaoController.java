@@ -4,6 +4,7 @@ import com.quartacapa.instituicao.controllers.dto.InstituicaoRequest;
 import com.quartacapa.instituicao.controllers.dto.InstituicaoResponse;
 import com.quartacapa.instituicao.model.Instituicao;
 import com.quartacapa.instituicao.repository.InstituicaoRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/instituicoes"))
+@CrossOrigin(origins = "*")
 public class AlterarInstituicaoController {
 
 
@@ -21,6 +23,7 @@ public class AlterarInstituicaoController {
 
 
     @PutMapping("/{id}")
+    @ApiOperation(value = "Atualiza o cadastro de uma Instituição já existente cujo id foi especificado")
     public ResponseEntity<InstituicaoResponse> alterarInstituicao
             (@PathVariable String id, @RequestBody @Valid InstituicaoRequest request) {
 

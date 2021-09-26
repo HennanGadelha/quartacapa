@@ -6,12 +6,11 @@ import com.quartacapa.livro.controllers.dto.LivroRequest;
 import com.quartacapa.livro.controllers.dto.LivroResponse;
 import com.quartacapa.livro.model.Livro;
 import com.quartacapa.livro.repository.LivroRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
@@ -20,6 +19,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/livros"))
+@CrossOrigin(origins = "*")
 public class CadastrarLivroController {
 
     @Autowired
@@ -29,6 +29,7 @@ public class CadastrarLivroController {
     private DisciplinaRepository disciplinaRepository;
 
     @PostMapping
+    @ApiOperation(value = "Salva o cadastro inicial de um novo Livro")
     public ResponseEntity<?> cadastrarLivro(@RequestBody @Valid LivroRequest request){
 
 

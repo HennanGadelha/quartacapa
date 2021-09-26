@@ -4,12 +4,10 @@ import com.quartacapa.instituicao.controllers.dto.InstituicaoRequest;
 import com.quartacapa.instituicao.controllers.dto.InstituicaoResponse;
 import com.quartacapa.instituicao.model.Instituicao;
 import com.quartacapa.instituicao.repository.InstituicaoRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
@@ -17,12 +15,14 @@ import java.net.URI;
 
 @RestController
 @RequestMapping(("/api/v1/instituicoes"))
-public class CadastroController {
+@CrossOrigin(origins = "*")
+public class CadastrarInstituicaoController {
 
     @Autowired
     private InstituicaoRepository repository;
 
     @PostMapping
+    @ApiOperation(value = "Salva o cadastro inicial de uma nova Instituição")
     public ResponseEntity<?> cadastrarInstituicao(@RequestBody @Valid InstituicaoRequest request){
 
         Instituicao instituicao = request.toModel();

@@ -3,8 +3,10 @@ package com.quartacapa.anuncios.controller;
 import com.quartacapa.anuncios.controller.dto.response.AnuncioResponse;
 import com.quartacapa.anuncios.model.Anuncio;
 import com.quartacapa.anuncios.repository.AnuncioRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
+@CrossOrigin(origins = "*")
 public class ListarTodosAnunciosController {
 
 
@@ -22,6 +25,7 @@ public class ListarTodosAnunciosController {
 
 
     @GetMapping
+    @ApiOperation(value = "Retorna uma lista com todos os Anúncios cadastrados")
     public ResponseEntity<List<?>> listarTodosAnuncios() {
 
         List<Anuncio> anuncios = anuncioRepository.findAll();

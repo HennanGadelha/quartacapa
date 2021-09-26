@@ -5,6 +5,7 @@ import com.quartacapa.usuario.controllers.dto.response.UsuarioResponse;
 import com.quartacapa.usuario.model.Usuario;
 
 import com.quartacapa.usuario.repository.UsuarioRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/usuarios"))
+@CrossOrigin(origins = "*")
 public class AlterarUsuarioController {
 
     @Autowired
@@ -21,6 +23,7 @@ public class AlterarUsuarioController {
 
 
     @PutMapping("/{id}")
+    @ApiOperation(value = "Atualiza o cadastro de um Usuário já existente cujo id foi especificado")
     public ResponseEntity<UsuarioResponse> alterarUsuario
             (@PathVariable String id, @RequestBody @Valid AlterarUsuarioRequest request) {
 

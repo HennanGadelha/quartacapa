@@ -5,6 +5,8 @@ import com.quartacapa.livro.controllers.dto.LivroRequest;
 import com.quartacapa.livro.controllers.dto.LivroResponse;
 import com.quartacapa.livro.model.Livro;
 import com.quartacapa.livro.repository.LivroRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/livros")
+@CrossOrigin(origins = "*")
 public class AlterarLivroController {
 
 
@@ -22,6 +25,7 @@ public class AlterarLivroController {
 
 
     @PutMapping("/{id}")
+    @ApiOperation(value = "Atualiza o cadastro de um Livro já existente cujo id foi especificado")
     public ResponseEntity<LivroResponse> alterarLivro
             (@PathVariable String id, @RequestBody @Valid LivroRequest request) {
 

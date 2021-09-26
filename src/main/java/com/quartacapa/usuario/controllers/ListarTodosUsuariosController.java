@@ -2,8 +2,10 @@ package com.quartacapa.usuario.controllers;
 
 import com.quartacapa.usuario.controllers.dto.response.UsuarioResponse;
 import com.quartacapa.usuario.repository.UsuarioRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(("/api/v1/usuarios"))
+@CrossOrigin(origins = "*")
 public class ListarTodosUsuariosController {
 
     @Autowired
@@ -20,6 +23,7 @@ public class ListarTodosUsuariosController {
 
 
     @GetMapping
+    @ApiOperation(value = "Retorna uma lista com todos os Usuários cadastrados")
     public ResponseEntity<List<?>> listarTodas(){
 
         List<UsuarioResponse> usuarios = new ArrayList<>();

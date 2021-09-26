@@ -4,6 +4,7 @@ import com.quartacapa.disciplina.controllers.dto.DisciplinaRequest;
 import com.quartacapa.disciplina.controllers.dto.DisciplinaResponse;
 import com.quartacapa.disciplina.model.Disciplina;
 import com.quartacapa.disciplina.repository.DisciplinaRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/disciplinas"))
+@CrossOrigin(origins = "*")
 public class AlterarDisciplinaController {
 
     @Autowired
@@ -20,6 +22,7 @@ public class AlterarDisciplinaController {
 
 
     @PutMapping("/{id}")
+    @ApiOperation(value = "Atualiza o cadastro de uma Disciplina já existente cujo id foi especificado")
     public ResponseEntity<DisciplinaResponse> alterarDisciplina
             (@PathVariable String id, @RequestBody @Valid DisciplinaRequest request) {
 

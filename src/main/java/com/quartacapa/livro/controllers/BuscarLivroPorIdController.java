@@ -6,23 +6,24 @@ import com.quartacapa.instituicao.repository.InstituicaoRepository;
 import com.quartacapa.livro.controllers.dto.LivroResponse;
 import com.quartacapa.livro.model.Livro;
 import com.quartacapa.livro.repository.LivroRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/livros"))
-public class BuscarLivroPorId {
+@CrossOrigin(origins = "*")
+public class BuscarLivroPorIdController {
 
     @Autowired
     private LivroRepository repository;
 
     @GetMapping("/{id}")
+    @ApiOperation(value = "Retorna as informações de um Livro cujo id foi especificado")
     public ResponseEntity<LivroResponse> buscarPorId(@PathVariable String id){
 
         Optional<Livro> possivelLivro = repository.findById(id);
