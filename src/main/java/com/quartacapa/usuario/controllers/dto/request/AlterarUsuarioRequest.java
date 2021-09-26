@@ -20,7 +20,6 @@ public class AlterarUsuarioRequest {
     @NotNull
     @NotBlank
     @NotEmpty
-    @UniqueValue(domainClass = Usuario.class, fieldName = "email")
     private String email;
     @NotNull @NotBlank @NotEmpty
     private String numeroCelular;

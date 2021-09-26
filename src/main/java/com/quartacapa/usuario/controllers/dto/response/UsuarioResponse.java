@@ -13,19 +13,19 @@ public class UsuarioResponse {
     private String cpf;
     private String numeroCelular;
 
-    private List<Anuncio> anuncios= new ArrayList<Anuncio>();
+
 
     @Deprecated
     public UsuarioResponse(){}
 
 
-    public UsuarioResponse(String id, String nome, String email,String cpf, String numeroCelular, List<Anuncio> anuncios) {
+    public UsuarioResponse(String id, String nome, String email,String cpf, String numeroCelular) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.numeroCelular = numeroCelular;
-        this.anuncios = anuncios;
+
     }
 
     public String getId() {
@@ -48,7 +48,5 @@ public class UsuarioResponse {
         return numeroCelular;
     }
 
-    public List<Anuncio> getAnuncios() {
-        return anuncios;
-    }
+
 }

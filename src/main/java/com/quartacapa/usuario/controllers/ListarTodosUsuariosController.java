@@ -27,7 +27,7 @@ public class ListarTodosUsuariosController {
         repository.findAll()
                 .stream().map(usuario -> usuarios
                         .add(new UsuarioResponse(usuario.getId(), usuario.getNome() ,usuario.getEmail(),
-                                usuario.getCpf(),usuario.getNumeroCelular(),usuario.getAnuncios()))).toArray();
+                                usuario.getCpf(),usuario.getNumeroCelular()))).toArray();
 
 
         return ResponseEntity.ok().body(usuarios);

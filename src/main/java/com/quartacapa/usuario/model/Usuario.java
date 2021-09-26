@@ -73,9 +73,9 @@ public class Usuario {
         this.numeroCelular = numeroCelular;
     }
 
-    public List<Anuncio> getAnuncios() {
-        return anuncios;
-    }
+//    public List<Anuncio> getAnuncios() {
+//        return anuncios;
+//    }
 
     public void addAnuncio(Anuncio anuncio){
         this.anuncios.add(anuncio);

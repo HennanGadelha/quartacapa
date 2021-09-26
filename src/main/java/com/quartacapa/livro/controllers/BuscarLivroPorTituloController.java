@@ -38,7 +38,7 @@ public class BuscarLivroPorTituloController {
                 livro.getValor(),
                 livro.getDescricaoEstado(),
                 livro.getDisponivelParaDoacao(),
-                livro.getAnoEscolar().toString(),
+                /*livro.getAnoEscolar(),*/
                 livro.getDisciplina().getNome());
 
         return ResponseEntity.ok().body(response);

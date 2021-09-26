@@ -50,7 +50,7 @@ public class CadastroAnuncioController {
 
         usuario.addAnuncio(anuncio);
 
-        usuario.getAnuncios();
+
 
         AnuncioResponse response =
                 new AnuncioResponse(

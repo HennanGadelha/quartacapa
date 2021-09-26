@@ -33,7 +33,7 @@ public class CadastroUsuarioController {
                 .buildAndExpand(usuario.getId()).toUri();
 
         UsuarioResponse response = new UsuarioResponse(usuario.getId(), usuario.getNome() ,usuario.getEmail(),
-                usuario.getCpf(),usuario.getNumeroCelular(), usuario.getAnuncios());
+                usuario.getCpf(),usuario.getNumeroCelular());
 
         return ResponseEntity.created(uri).body(response);
 

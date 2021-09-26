@@ -19,8 +19,8 @@ public class LivroResponse {
     private Boolean disponivelParaDoacao;
     private String disciplina;
 
-    @Enumerated(EnumType.STRING)
-    private String anoEscolar;
+//    @Enumerated(EnumType.STRING)
+//    private AnoEscolarEnum anoEscolar;
 
     @Deprecated
     LivroResponse(){}
@@ -34,7 +34,7 @@ public class LivroResponse {
                          BigDecimal valor,
                          String descricaoEstado,
                          Boolean disponivelParaDoacao,
-                         String anoEscolar,
+                         /*AnoEscolarEnum anoEscolar,*/
                          String disciplina) {
         this.id = id;
         this.isbn = isbn;
@@ -45,7 +45,7 @@ public class LivroResponse {
         this.valor = valor;
         this.descricaoEstado = descricaoEstado;
         this.disponivelParaDoacao = disponivelParaDoacao;
-        this.anoEscolar = anoEscolar;
+        //this.anoEscolar = anoEscolar;
         this.disciplina = disciplina;
     }
 
@@ -82,9 +82,9 @@ public class LivroResponse {
         return disponivelParaDoacao;
     }
 
-    public String getAnoEscolar() {
-        return anoEscolar;
-    }
+//    public AnoEscolarEnum getAnoEscolar() {
+//        return anoEscolar;
+//    }
 
     public String getDisciplina() {
         return disciplina;

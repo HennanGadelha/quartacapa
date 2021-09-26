@@ -27,7 +27,7 @@ public class BuscarUsuarioPorId {
 
         UsuarioResponse response =
                 new UsuarioResponse(usuario.getId(), usuario.getNome(), usuario.getEmail(), usuario.getCpf(),
-                        usuario.getNumeroCelular(), usuario.getAnuncios());
+                        usuario.getNumeroCelular());
 
         return ResponseEntity.ok().body(response);
 

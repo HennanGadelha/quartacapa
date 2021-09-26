@@ -42,7 +42,7 @@ public class BuscarLivroPorId {
                         livro.getValor(),
                         livro.getDescricaoEstado(),
                         livro.getDisponivelParaDoacao(),
-                        livro.getAnoEscolar().toString(),
+                        /*livro.getAnoEscolar(),*/
                         livro.getDisciplina().getNome());
 
 

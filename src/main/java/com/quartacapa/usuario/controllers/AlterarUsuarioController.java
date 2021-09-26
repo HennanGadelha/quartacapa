@@ -28,12 +28,14 @@ public class AlterarUsuarioController {
 
         Usuario usuario = possivelUsuario.get();
 
+        System.out.println(request.getNome());
+
         updateData(usuario, request);
 
         repository.save(usuario);
 
         UsuarioResponse response = new UsuarioResponse(usuario.getId(), usuario.getNome(), usuario.getEmail(),
-                usuario.getCpf(),usuario.getNumeroCelular(), usuario.getAnuncios());
+                usuario.getCpf(),usuario.getNumeroCelular());
 
         return ResponseEntity.ok().body(response);
 
