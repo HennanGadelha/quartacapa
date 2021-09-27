@@ -70,6 +70,7 @@ public class AlterarLivroController {
         livroAlterado.setDescricaoEstado(request.getDescricaoEstado());
         livroAlterado.setDisponivelParaDoacao(request.getDisponivelParaDoacao());
 
+        //busca disciplina
         Optional<Disciplina> possivelDisciplina = disciplinaRepository.findById(request.getIdDisciplina());
 
         Disciplina disciplina = possivelDisciplina.get();
