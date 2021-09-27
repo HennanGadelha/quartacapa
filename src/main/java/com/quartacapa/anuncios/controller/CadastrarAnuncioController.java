@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CadastrarAnuncioController {
 
     @Autowired

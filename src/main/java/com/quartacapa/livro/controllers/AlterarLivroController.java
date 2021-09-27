@@ -18,7 +18,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/livros")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AlterarLivroController {
 
 
@@ -70,7 +70,7 @@ public class AlterarLivroController {
         livroAlterado.setDescricaoEstado(request.getDescricaoEstado());
         livroAlterado.setDisponivelParaDoacao(request.getDisponivelParaDoacao());
 
-        //implementando busca para disciplina alterar livro
+
         Optional<Disciplina> possivelDisciplina = disciplinaRepository.findById(request.getIdDisciplina());
 
         Disciplina disciplina = possivelDisciplina.get();

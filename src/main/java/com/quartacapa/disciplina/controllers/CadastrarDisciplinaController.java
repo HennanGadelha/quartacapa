@@ -15,7 +15,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping(("/api/v1/disciplinas"))
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CadastrarDisciplinaController {
 
     @Autowired

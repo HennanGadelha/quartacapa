@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/disciplinas"))
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class BuscarDisciplinaPorNomeController {
 
     @Autowired
