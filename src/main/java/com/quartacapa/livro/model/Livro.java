@@ -1,6 +1,7 @@
 package com.quartacapa.livro.model;
 
 import com.quartacapa.disciplina.model.Disciplina;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -15,8 +16,11 @@ public class Livro {
     private String titulo;
     private String autor;
     private String editora;
+    @ApiModelProperty(value = "Ano de Publicação (AAAA)")
     private Integer ano;
+    @ApiModelProperty(value = "Valor em Real ex: R$199.99")
     private BigDecimal valor;
+    @ApiModelProperty(value = "Descrição do estado de uso do livro. Exs: novo; seminovo; usado em bom estado")
     private String descricaoEstado;
     private Boolean disponivelParaDoacao;
 
@@ -24,6 +28,7 @@ public class Livro {
     private Disciplina disciplina;
 
     @Enumerated(EnumType.STRING)
+    @ApiModelProperty(value = "NAO_SE_APLICA ou escolher ano do fundamental ou medio. exs: PRIMEIRO_ANO_FUNDAMENTAL, PRIMEIRO_ANO_MEDIO")
     private AnoEscolarEnum anoEscolar;
 
     @Deprecated
