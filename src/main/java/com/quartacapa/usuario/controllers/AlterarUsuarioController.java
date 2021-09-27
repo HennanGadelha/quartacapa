@@ -21,7 +21,6 @@ public class AlterarUsuarioController {
     @Autowired
     private UsuarioRepository repository;
 
-
     @PutMapping("/{id}")
     @ApiOperation(value = "Atualiza o cadastro de um Usuário já existente cujo id foi especificado")
     public ResponseEntity<UsuarioResponse> alterarUsuario

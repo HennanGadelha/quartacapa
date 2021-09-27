@@ -1,6 +1,8 @@
 package com.quartacapa.livro.controllers;
 
 
+import com.quartacapa.disciplina.model.Disciplina;
+import com.quartacapa.disciplina.repository.DisciplinaRepository;
 import com.quartacapa.livro.controllers.dto.LivroRequest;
 import com.quartacapa.livro.controllers.dto.LivroResponse;
 import com.quartacapa.livro.model.Livro;
@@ -22,6 +24,9 @@ public class AlterarLivroController {
 
     @Autowired
     private LivroRepository repository;
+
+    @Autowired
+    private DisciplinaRepository disciplinaRepository;
 
 
     @PutMapping("/{id}")
@@ -64,6 +69,13 @@ public class AlterarLivroController {
         livroAlterado.setValor(request.getValor());
         livroAlterado.setDescricaoEstado(request.getDescricaoEstado());
         livroAlterado.setDisponivelParaDoacao(request.getDisponivelParaDoacao());
+
+        Optional<Disciplina> possivelDisciplina = disciplinaRepository.findById(request.getIdDisciplina());
+
+        Disciplina disciplina = possivelDisciplina.get();
+
+        livroAlterado.setDisciplina(disciplina);
+
     }
 
 }
