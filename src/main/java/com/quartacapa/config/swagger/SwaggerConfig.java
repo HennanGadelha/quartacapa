@@ -24,10 +24,11 @@ public class SwaggerConfig {
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                //.apis(RequestHandlerSelectors.basePackage("com.quartacapa"))
-                //.paths(regex("/api.*"))
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
+                //.apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.quartacapa"))
+                //.paths(PathSelectors.any())
+                .paths(regex("/api/v1.*"))
+                //.paths(PathSelectors.ant("/api/*"))
                 .build()
                 .apiInfo(metaInfo());
     }
@@ -42,7 +43,7 @@ public class SwaggerConfig {
                 "Terms of Service",
                 new Contact("Grupo 2/Back - Hennan Gadelha, João Victor e Marília Vilar", "https://github.com/HennanGadelha/quartacapa", "email"),
                 "Apache License Version 2.0",
-                "https://www.apache.org/licesen.html",
+                "https://www.apache.org/licenses/LICENSE-2.0",
                 new ArrayList<VendorExtension>()
         );
 
