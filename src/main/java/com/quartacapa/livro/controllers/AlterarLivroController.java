@@ -64,6 +64,8 @@ public class AlterarLivroController {
         livroAlterado.setValor(request.getValor());
         livroAlterado.setDescricaoEstado(request.getDescricaoEstado());
         livroAlterado.setDisponivelParaDoacao(request.getDisponivelParaDoacao());
+        livroAlterado.setAnoEscolar(request.getAnoEscolar());
+        //livroAlterado.setDisciplina(request.getIdDisciplina());
     }
 
 }
