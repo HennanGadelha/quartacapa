@@ -3,10 +3,7 @@ package com.quartacapa.anuncios.model;
 import com.quartacapa.livro.model.Livro;
 import com.quartacapa.usuario.model.Usuario;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -19,7 +16,7 @@ public class Anuncio {
     private String titulo;
     private String descricao;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Livro livro;
 
     @ManyToOne

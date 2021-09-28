@@ -1,14 +1,15 @@
 package com.quartacapa.anuncios.controller;
 
+import com.quartacapa.anuncios.controller.dto.request.AnuncioLivroRequest;
 import com.quartacapa.anuncios.controller.dto.response.AnuncioResponse;
-import com.quartacapa.anuncios.controller.dto.request.CadastroAnuncioRequest;
 import com.quartacapa.anuncios.model.Anuncio;
 import com.quartacapa.anuncios.repository.AnuncioRepository;
+import com.quartacapa.disciplina.model.Disciplina;
+import com.quartacapa.disciplina.repository.DisciplinaRepository;
 import com.quartacapa.livro.model.Livro;
 import com.quartacapa.livro.repository.LivroRepository;
 import com.quartacapa.usuario.model.Usuario;
 import com.quartacapa.usuario.repository.UsuarioRepository;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,41 +19,41 @@ import java.util.Optional;
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
 @CrossOrigin(origins = "http://localhost:4200")
-public class CadastrarAnuncioController {
+public class CadastroLivroAnuncioController {
+
 
     @Autowired
-    private AnuncioRepository anuncioRepository;
+    LivroRepository livroRepository;
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    DisciplinaRepository disciplinaRepository;
 
     @Autowired
-    private LivroRepository livroRepository;
+    AnuncioRepository anuncioRepository;
+
+    @Autowired
+    UsuarioRepository usuarioRepository;
 
 
     @PostMapping
-    @ApiOperation(value = "Salva o cadastro inicial de um novo Anúncio")
-    public ResponseEntity<?> cadastroAnuncio(@RequestBody CadastroAnuncioRequest request ){
+    public ResponseEntity<?> cadastroAnuncio(@RequestBody AnuncioLivroRequest request ){
 
 
-        Optional<Livro> possiveLivro = livroRepository.findById(request.getIdLivro());
-        Livro livro = possiveLivro.get();
+        Optional<Disciplina> possivelDisciplina = disciplinaRepository.findById(request.getIdDisciplina());
+        Disciplina disciplina = possivelDisciplina.get();
+
+        Livro livro = request.toLivro(disciplina);
+
+        livroRepository.save(livro);
 
         Optional<Usuario> possivelUsuario = usuarioRepository.findById(request.getIdUsuario());
+
         Usuario usuario = possivelUsuario.get();
 
-        System.out.println("usuario" + possivelUsuario.get().getNome());
-
-
-        System.out.println("livro" + possiveLivro.get().getTitulo());
-
-        Anuncio anuncio = request.toModel(livro, usuario);
+        Anuncio anuncio = request.toAnuncio(livro, usuario);
 
         anuncioRepository.save(anuncio);
 
-        usuario.addAnuncio(anuncio);
-
-        usuario.getAnuncios();
 
         AnuncioResponse response =
                 new AnuncioResponse(

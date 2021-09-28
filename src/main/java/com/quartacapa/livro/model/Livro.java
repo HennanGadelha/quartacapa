@@ -1,5 +1,6 @@
 package com.quartacapa.livro.model;
 
+import com.quartacapa.anuncios.model.Anuncio;
 import com.quartacapa.disciplina.model.Disciplina;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Livro {
 
     @OneToOne
     private Disciplina disciplina;
+
 
     @Enumerated(EnumType.STRING)
     private AnoEscolarEnum anoEscolar;
@@ -135,7 +137,6 @@ public class Livro {
         this.disciplina = disciplina;
     }
 
-
     public AnoEscolarEnum getAnoEscolar() {
         return anoEscolar;
     }
@@ -143,4 +144,5 @@ public class Livro {
     public void setAnoEscolar(AnoEscolarEnum anoEscolar) {
         this.anoEscolar = anoEscolar;
     }
+
 }
