@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -22,7 +23,7 @@ public class AlterarAnuncioController {
 
     @PutMapping("/{id}")
     @ApiOperation(value = "Atualiza um Anúncio já existente cujo id foi especificado")
-    public ResponseEntity<AnuncioResponse> alterarAnuncio(@PathVariable String id, @RequestBody AlterarAnuncioRequest request){
+    public ResponseEntity<AnuncioResponse> alterarAnuncio(@PathVariable String id, @RequestBody @Valid AlterarAnuncioRequest request){
 
         Optional<Anuncio> possivelAnuncio = anuncioRepository.findById(id);
         Anuncio anuncio = possivelAnuncio.get();

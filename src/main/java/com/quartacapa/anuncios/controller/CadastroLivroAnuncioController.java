@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
 
@@ -38,7 +39,7 @@ public class CadastroLivroAnuncioController {
 
 
     @PostMapping
-    public ResponseEntity<?> cadastroAnuncio(@RequestBody AnuncioLivroRequest request ){
+    public ResponseEntity<?> cadastroAnuncio(@RequestBody @Valid AnuncioLivroRequest request ){
 
 
         Optional<Disciplina> possivelDisciplina = disciplinaRepository.findById(request.getIdDisciplina());

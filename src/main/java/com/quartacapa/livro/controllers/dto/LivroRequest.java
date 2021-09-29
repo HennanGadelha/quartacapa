@@ -28,7 +28,6 @@ public class LivroRequest {
 
     private String idDisciplina;
 
-
     private AnoEscolarEnum anoEscolar;
 
     @Deprecated

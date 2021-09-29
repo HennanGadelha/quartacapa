@@ -7,23 +7,32 @@ import com.quartacapa.livro.model.Livro;
 import com.quartacapa.usuario.model.Usuario;
 
 
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
 public class AnuncioLivroRequest {
     private String isbn;
+    @NotNull @NotEmpty @NotBlank
     private String titulo;
+    @NotNull @NotEmpty @NotBlank
     private String autor;
     private String editora;
+    @NotNull @Positive @Digits(integer = 4, fraction = 0)
     private Integer ano;
+    @NotNull @Positive @Digits(integer = 3, fraction = 2)
     private BigDecimal valor;
+    @NotNull @NotEmpty @NotBlank
     private String descricaoEstado;
+    @NotNull
     private Boolean disponivelParaDoacao;
     private String idDisciplina;
     private AnoEscolarEnum anoEscolar;
 
 
     //dados do anuncio
+    @NotNull @NotEmpty @NotBlank
     private String tituloDoAnuncio;
+    @NotNull @NotEmpty @NotBlank
     private String descricao;
     private String fotoLivro;
     private String idUsuario;
