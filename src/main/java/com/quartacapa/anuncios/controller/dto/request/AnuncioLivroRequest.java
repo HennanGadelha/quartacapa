@@ -1,6 +1,7 @@
 package com.quartacapa.anuncios.controller.dto.request;
 
 import com.quartacapa.anuncios.model.Anuncio;
+import com.quartacapa.anuncios.model.AnuncioStatusEnum;
 import com.quartacapa.disciplina.model.Disciplina;
 import com.quartacapa.livro.model.AnoEscolarEnum;
 import com.quartacapa.livro.model.Livro;
@@ -35,6 +36,7 @@ public class AnuncioLivroRequest {
     @NotNull @NotEmpty @NotBlank
     private String descricao;
     private String fotoLivro;
+    private AnuncioStatusEnum anuncioStatus;
     private String idUsuario;
 
 
@@ -52,7 +54,12 @@ public class AnuncioLivroRequest {
     }
 
     public Anuncio toAnuncio(Livro livro, Usuario usuario){
-        return new Anuncio(this.tituloDoAnuncio, this.descricao, livro,usuario, this.fotoLivro);
+        return new Anuncio(this.tituloDoAnuncio,
+                this.descricao,
+                livro,
+                usuario,
+                this.fotoLivro,
+                this.anuncioStatus);
     }
 
     @Deprecated
@@ -71,6 +78,7 @@ public class AnuncioLivroRequest {
                                String tituloDoAnuncio,
                                String descricao,
                                String fotoLivro,
+                               AnuncioStatusEnum anuncioStatus,
                                String idUsuario) {
         this.isbn = isbn;
         this.titulo = titulo;
@@ -85,6 +93,7 @@ public class AnuncioLivroRequest {
         this.tituloDoAnuncio = tituloDoAnuncio;
         this.descricao = descricao;
         this.fotoLivro = fotoLivro;
+        this.anuncioStatus = anuncioStatus;
         this.idUsuario = idUsuario;
     }
 
@@ -140,6 +149,8 @@ public class AnuncioLivroRequest {
     public String getFotoLivro() {
         return fotoLivro;
     }
+
+    public AnuncioStatusEnum getAnuncioStatus() {return anuncioStatus; }
 
     public String getIdUsuario() {
         return idUsuario;

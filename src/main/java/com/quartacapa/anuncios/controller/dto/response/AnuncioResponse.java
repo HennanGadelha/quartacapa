@@ -2,6 +2,8 @@ package com.quartacapa.anuncios.controller.dto.response;
 
 import com.quartacapa.anuncios.model.Anuncio;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,9 @@ public class AnuncioResponse {
     private String email;
     private String numeroCelular;
 
+    @Enumerated(EnumType.STRING)
+    private String anuncioStatus;
+
 
 
     @Deprecated
@@ -48,7 +53,8 @@ public class AnuncioResponse {
                            String disciplina,
                            String nome,
                            String email,
-                           String numeroCelular) {
+                           String numeroCelular,
+                           String anuncioStatus) {
 
 
         this.idDoAnuncio = idDoAnuncio;
@@ -67,6 +73,7 @@ public class AnuncioResponse {
         this.nome = nome;
         this.email = email;
         this.numeroCelular = numeroCelular;
+        this.anuncioStatus = anuncioStatus;
 
     }
 
@@ -134,5 +141,6 @@ public class AnuncioResponse {
         return numeroCelular;
     }
 
+    public String getAnuncioStatus() { return anuncioStatus; }
 
 }

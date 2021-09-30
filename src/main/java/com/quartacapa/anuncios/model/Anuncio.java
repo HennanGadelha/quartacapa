@@ -19,6 +19,9 @@ public class Anuncio {
     @OneToOne(cascade = CascadeType.PERSIST)
     private Livro livro;
 
+    @Enumerated(EnumType.STRING)
+    private AnuncioStatusEnum anuncioStatus;
+
     @ManyToOne
     private Usuario usuario;
 
@@ -27,7 +30,7 @@ public class Anuncio {
     @Deprecated
     public Anuncio(){}
 
-    public Anuncio(String titulo, String descricao, Livro livro, Usuario usuario, String fotoLivro) {
+    public Anuncio(String titulo, String descricao, Livro livro, Usuario usuario, String fotoLivro, AnuncioStatusEnum anuncioStatus) {
 
         this.id = UUID.randomUUID().toString();
         this.criadoEm = LocalDate.now();
@@ -36,6 +39,7 @@ public class Anuncio {
         this.livro = livro;
         this.usuario = usuario;
         this.fotoLivro = fotoLivro;
+        this.anuncioStatus = anuncioStatus;
     }
 
     public String getId() {
@@ -66,6 +70,10 @@ public class Anuncio {
         return fotoLivro;
     }
 
+    public AnuncioStatusEnum getAnuncioStatus() {
+        return anuncioStatus;
+    }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -85,4 +93,9 @@ public class Anuncio {
     public void setFotoLivro(String fotoLivro) {
         this.fotoLivro = fotoLivro;
     }
+
+    public void setAnuncioStatus(AnuncioStatusEnum anuncioStatus) {
+        this.anuncioStatus = anuncioStatus;
+    }
+
 }

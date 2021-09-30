@@ -48,7 +48,8 @@ public class ListarTodosAnunciosController {
                         anuncio.getLivro().getDisciplina().getNome(),
                         anuncio.getUsuario().getNome(),
                         anuncio.getUsuario().getEmail(),
-                        anuncio.getUsuario().getNumeroCelular()))).toArray();
+                        anuncio.getUsuario().getNumeroCelular(),
+                        anuncio.getAnuncioStatus().toString()))).toArray();
 
 
         return ResponseEntity.ok().body(response);

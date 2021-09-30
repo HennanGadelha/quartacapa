@@ -44,7 +44,8 @@ public class BuscarAnuncioPorIdController {
                         anuncio.getLivro().getDisciplina().getNome(),
                         anuncio.getUsuario().getNome(),
                         anuncio.getUsuario().getEmail(),
-                        anuncio.getUsuario().getNumeroCelular());
+                        anuncio.getUsuario().getNumeroCelular(),
+                        anuncio.getAnuncioStatus().toString());
 
         return ResponseEntity.ok().body(response);
 
