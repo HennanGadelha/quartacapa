@@ -33,6 +33,9 @@ public class AnuncioResponse {
     @Enumerated(EnumType.STRING)
     private String anuncioStatus;
 
+    @Enumerated(EnumType.STRING)
+    private String anoEscolar;
+
 
 
     @Deprecated
@@ -40,6 +43,7 @@ public class AnuncioResponse {
 
     public AnuncioResponse(String idDoAnuncio,
                            String titulo,
+                           String anoEscolar,
                            String descricao,
                            String fotoLivro,
                            String isbn,
@@ -59,6 +63,7 @@ public class AnuncioResponse {
 
         this.idDoAnuncio = idDoAnuncio;
         this.titulo = titulo;
+        this.anoEscolar = anoEscolar;
         this.descricao = descricao;
         this.fotoLivro = fotoLivro;
         this.isbn = isbn;
@@ -84,6 +89,8 @@ public class AnuncioResponse {
     public String getTitulo() {
         return titulo;
     }
+
+    public String getAnoEscolar() { return anoEscolar; }
 
     public String getDescricao() {
         return descricao;

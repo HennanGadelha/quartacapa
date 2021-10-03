@@ -36,6 +36,7 @@ public class AlterarAnuncioController {
                 new AnuncioResponse(
                         anuncio.getId(),
                         anuncio.getTitulo(),
+                        anuncio.getLivro().getAnoEscolar().toString(),
                         anuncio.getDescricao(),
                         anuncio.getFotoLivro(),
                         anuncio.getLivro().getIsbn(),
