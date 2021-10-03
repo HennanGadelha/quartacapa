@@ -39,4 +39,6 @@ public class AlterarAnuncioRequest {
     public void setFotoLivro(String fotoLivro) {
         this.fotoLivro = fotoLivro;
     }
+
+
 }
