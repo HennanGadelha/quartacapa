@@ -2,8 +2,19 @@ package com.quartacapa.anuncios.model;
 
 public enum AnuncioStatusEnum {
 
-    INDISPONIVEL,
-    DISPONIVEL,
-    EM_NEGOCIACAO,
-    VENDIDO
+    INDISPONIVEL("Indisponível"),
+    DISPONIVEL("Disponível"),
+    EM_NEGOCIACAO("Em negociação"),
+    VENDIDO("Vendido");
+
+    private final String status;
+
+    AnuncioStatusEnum(String status) {
+        this.status = status;
+    }
+
+    public String toString() {
+        return this.status;
+    }
+
 }
