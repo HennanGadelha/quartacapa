@@ -3,6 +3,8 @@ package com.quartacapa.anuncios.controller;
 import com.quartacapa.anuncios.controller.dto.response.AnuncioResponse;
 import com.quartacapa.anuncios.model.Anuncio;
 import com.quartacapa.anuncios.repository.AnuncioRepository;
+import com.quartacapa.disciplina.controllers.dto.DisciplinaResponse;
+import com.quartacapa.disciplina.model.Disciplina;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,17 +15,17 @@ import java.util.Optional;
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
 @CrossOrigin(origins = "http://localhost:4200")
-public class BuscarAnuncioPorIdController {
+public class BuscarAnuncioPorTituloDoAnuncioController {
 
     @Autowired
     private AnuncioRepository anuncioRepository;
 
 
-    @GetMapping("/{id}")
-    @ApiOperation(value = "Retorna as informações de um Anúncio cujo id foi especificado")
-    public ResponseEntity<AnuncioResponse> buscarAnuncioPorId(@PathVariable String id){
+    @GetMapping("/filtro")
+    @ApiOperation(value = "Retorna as informações de um Anúncio cujo titúlo do anúncio foi especificado")
+    public ResponseEntity<AnuncioResponse> buscarPorTituloAnuncio(@RequestParam("tituloDoAnuncio") String tituloDoAnuncio){
 
-        Optional<Anuncio> possivelAnuncio = anuncioRepository.findById(id);
+        Optional<Anuncio> possivelAnuncio =  anuncioRepository.findByTitulo(tituloDoAnuncio);
 
         Anuncio anuncio = possivelAnuncio.get();
 
