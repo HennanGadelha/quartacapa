@@ -4,6 +4,7 @@ import com.quartacapa.anuncios.controller.dto.request.AnuncioLivroRequest;
 import com.quartacapa.anuncios.controller.dto.response.AnuncioResponse;
 import com.quartacapa.anuncios.model.Anuncio;
 import com.quartacapa.anuncios.repository.AnuncioRepository;
+import com.quartacapa.config.exceptions.EntidadeJaExistenteException;
 import com.quartacapa.disciplina.model.Disciplina;
 import com.quartacapa.disciplina.repository.DisciplinaRepository;
 import com.quartacapa.livro.model.Livro;
@@ -11,6 +12,7 @@ import com.quartacapa.livro.repository.LivroRepository;
 import com.quartacapa.usuario.model.Usuario;
 import com.quartacapa.usuario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -39,10 +41,13 @@ public class CadastroLivroAnuncioController {
 
 
     @PostMapping
-    public ResponseEntity<?> cadastroAnuncio(@RequestBody @Valid AnuncioLivroRequest request ){
+    public ResponseEntity<?> cadastroAnuncio(@RequestBody @Valid AnuncioLivroRequest request ) throws EntidadeJaExistenteException {
 
 
         Optional<Disciplina> possivelDisciplina = disciplinaRepository.findById(request.getIdDisciplina());
+
+        if(possivelDisciplina.isEmpty()) throw new EntidadeJaExistenteException(HttpStatus.BAD_REQUEST, "Disciplina não existent");
+
         Disciplina disciplina = possivelDisciplina.get();
 
         Livro livro = request.toLivro(disciplina);
