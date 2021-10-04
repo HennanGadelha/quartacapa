@@ -6,6 +6,7 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
+import springfox.documentation.service.Tag;
 import springfox.documentation.service.VendorExtension;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -29,7 +30,12 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(metaInfo());
+                .apiInfo(metaInfo())
+                .tags(new Tag("Disciplinas", "relacionado às disciplinas as quais os livros se referem"),
+                        new Tag("Instituições", "relacionadas as instituições de E. conveniadas"),
+                        new Tag("Usuários", "relacionado aos usuários que desejam comprar e/ou vender seus livros"),
+                        new Tag("Livros", "relacionado aos livros da plataforma"),
+                        new Tag("Anúncios", "realacionado aos anúncios de livros divulgados pelos vendedores"));
     }
 
 

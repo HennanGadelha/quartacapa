@@ -11,6 +11,7 @@ import com.quartacapa.livro.model.Livro;
 import com.quartacapa.livro.repository.LivroRepository;
 import com.quartacapa.usuario.model.Usuario;
 import com.quartacapa.usuario.repository.UsuarioRepository;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
+@Api(tags = "Anúncios")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CadastroLivroAnuncioController {
 

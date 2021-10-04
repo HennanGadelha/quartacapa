@@ -18,6 +18,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/livros")
+@Api(tags = "Livros")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AlterarLivroController {
 
