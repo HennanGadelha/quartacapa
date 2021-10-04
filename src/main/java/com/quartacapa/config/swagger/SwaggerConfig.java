@@ -32,7 +32,7 @@ public class SwaggerConfig {
                 .build()
                 .apiInfo(metaInfo())
                 .tags(new Tag("Disciplinas", "relacionado às disciplinas as quais os livros se referem"),
-                        new Tag("Instituições", "relacionadas as instituições de Ensino conveniadas"),
+                        new Tag("Instituições", "relacionadas as instituições de E. conveniadas"),
                         new Tag("Usuários", "relacionado aos usuários que desejam comprar e/ou vender seus livros"),
                         new Tag("Livros", "relacionado aos livros da plataforma"),
                         new Tag("Anúncios", "realacionado aos anúncios de livros divulgados pelos vendedores"));

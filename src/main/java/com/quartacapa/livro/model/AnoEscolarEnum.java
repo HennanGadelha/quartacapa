@@ -3,18 +3,18 @@ package com.quartacapa.livro.model;
 public enum AnoEscolarEnum {
 
     NAO_SE_APLICA("Não se aplica"),
-    PRIMEIRO_ANO_FUNDAMENTAL("1o ano FUND"),
-    SEGUNDO_ANO_FUNDAMENTAL("2o ano FUND"),
-    TERCEIRO_ANO_FUNDAMENTAL("3o ano FUND"),
-    QUARTO_ANO_FUNDAMENTAL("4o ano FUND"),
-    QUINTO_ANO_FUNDAMENTAL("5o ano FUND"),
-    SEXTO_ANO_FUNDAMENTAL("6o ano FUND"),
-    SETIMO_ANO_FUNDAMENTAL("7o ano FUND"),
-    OITAVO_ANO_FUNDAMENTAL("8o ano FUND"),
-    NONO_ANO_FUNDAMMENTAL("9o ano FUND"),
-    PRIMEIRO_ANO_MEDIO("1o ano MÉDIO"),
-    SEGUNDO_ANO_MEDIO("2o ano MÉDIO"),
-    TERCEIRO_ANO_MEDIO("3o ano MÉDIO");
+    PRIMEIRO_ANO_FUNDAMENTAL("1º ano E. Fundamental"),
+    SEGUNDO_ANO_FUNDAMENTAL("2º ano E. Fundamental"),
+    TERCEIRO_ANO_FUNDAMENTAL("3º ano E. Fundamental"),
+    QUARTO_ANO_FUNDAMENTAL("4º ano E. Fundamental"),
+    QUINTO_ANO_FUNDAMENTAL("5º ano E. Fundamental"),
+    SEXTO_ANO_FUNDAMENTAL("6º ano E. Fundamental"),
+    SETIMO_ANO_FUNDAMENTAL("7º ano E. Fundamental"),
+    OITAVO_ANO_FUNDAMENTAL("8º ano E. Fundamental"),
+    NONO_ANO_FUNDAMMENTAL("9º ano E. Fundamental"),
+    PRIMEIRO_ANO_MEDIO("1º ano E. Médio"),
+    SEGUNDO_ANO_MEDIO("2º ano E. Médio"),
+    TERCEIRO_ANO_MEDIO("3º ano E. Médio");
 
     private final String status;
 
