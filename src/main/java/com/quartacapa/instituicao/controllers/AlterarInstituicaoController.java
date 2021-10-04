@@ -4,6 +4,7 @@ import com.quartacapa.instituicao.controllers.dto.InstituicaoRequest;
 import com.quartacapa.instituicao.controllers.dto.InstituicaoResponse;
 import com.quartacapa.instituicao.model.Instituicao;
 import com.quartacapa.instituicao.repository.InstituicaoRepository;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/instituicoes"))
+@Api(tags = "Instituições")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AlterarInstituicaoController {
 

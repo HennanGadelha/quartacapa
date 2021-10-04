@@ -4,6 +4,7 @@ import com.quartacapa.anuncios.controller.dto.request.AlterarAnuncioRequest;
 import com.quartacapa.anuncios.controller.dto.response.AnuncioResponse;
 import com.quartacapa.anuncios.model.Anuncio;
 import com.quartacapa.anuncios.repository.AnuncioRepository;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
+@Api(tags = "Anúncios")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AlterarAnuncioController {
 
