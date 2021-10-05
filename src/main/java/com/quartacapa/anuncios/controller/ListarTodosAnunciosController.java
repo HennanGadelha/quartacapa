@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
 @Api(tags = "Anúncios")
-@CrossOrigin(origins = "hhttps://quarta-capa-git-master-jully-nixon.vercel.app")
+@CrossOrigin(origins = "https://quarta-capa.vercel.app")
 public class ListarTodosAnunciosController {
 
 
