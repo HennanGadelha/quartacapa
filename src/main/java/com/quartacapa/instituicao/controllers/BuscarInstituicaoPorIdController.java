@@ -14,7 +14,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping(("/api/v1/instituicoes"))
 @Api(tags = "Instituições")
-@CrossOrigin(origins = "https://quarta-capa-gdnvduz1v-jully-nixon.vercel.app/")
+@CrossOrigin(origins = "https://quarta-capa.vercel.app/")
 public class BuscarInstituicaoPorIdController {
 
 

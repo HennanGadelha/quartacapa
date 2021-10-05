@@ -17,7 +17,7 @@ import java.net.URI;
 @RestController
 @RequestMapping(("/api/v1/disciplinas"))
 @Api(tags = "Disciplinas")
-@CrossOrigin(origins = "https://quarta-capa-gdnvduz1v-jully-nixon.vercel.app/")
+@CrossOrigin(origins = "https://quarta-capa.vercel.app/")
 public class CadastrarDisciplinaController {
 
     @Autowired
