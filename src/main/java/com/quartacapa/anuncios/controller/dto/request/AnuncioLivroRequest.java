@@ -12,6 +12,7 @@ import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
 public class AnuncioLivroRequest {
+
     private String isbn;
     @NotNull @NotEmpty @NotBlank
     private String titulo;
@@ -30,7 +31,7 @@ public class AnuncioLivroRequest {
     private AnoEscolarEnum anoEscolar;
 
 
-    //dados do anuncio
+
     @NotNull @NotEmpty @NotBlank
     private String tituloDoAnuncio;
     @NotNull @NotEmpty @NotBlank
