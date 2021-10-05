@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
 @Api(tags = "Anúncios")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class DeletarAnuncioController {
 
     @Autowired

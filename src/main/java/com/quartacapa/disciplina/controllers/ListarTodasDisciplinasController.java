@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping(("/api/v1/disciplinas"))
 @Api(tags = "Disciplinas")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class ListarTodasDisciplinasController {
 
     @Autowired
