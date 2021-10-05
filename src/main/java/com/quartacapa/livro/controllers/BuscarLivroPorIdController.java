@@ -17,7 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping(("/api/v1/livros"))
 @Api(tags = "Livros")
-@CrossOrigin(origins = "https://quarta-capa.vercel.app/")
+@CrossOrigin(origins = "https://quarta-capa-gdnvduz1v-jully-nixon.vercel.app/")
 public class BuscarLivroPorIdController {
 
     @Autowired
