@@ -18,12 +18,13 @@ public class Livro {
     private String editora;
     private Integer ano;
     private BigDecimal valor;
-    private String descricaoEstado;
     private Boolean disponivelParaDoacao;
 
     @OneToOne
     private Disciplina disciplina;
 
+    @Enumerated(EnumType.STRING)
+    private DescricaoEstadoEnum descricaoEstado;
 
     @Enumerated(EnumType.STRING)
     private AnoEscolarEnum anoEscolar;
@@ -37,7 +38,7 @@ public class Livro {
                  String editora,
                  Integer ano,
                  BigDecimal valor,
-                 String descricaoEstado,
+                 DescricaoEstadoEnum descricaoEstado,
                  Boolean disponivelParaDoacao,
                  AnoEscolarEnum anoEscolar,
                  Disciplina disciplina) {
@@ -109,11 +110,11 @@ public class Livro {
         this.valor = valor;
     }
 
-    public String getDescricaoEstado() {
+    public DescricaoEstadoEnum getDescricaoEstado() {
         return descricaoEstado;
     }
 
-    public void setDescricaoEstado(String descricaoEstado) {
+    public void setDescricaoEstado(DescricaoEstadoEnum descricaoEstado) {
         this.descricaoEstado = descricaoEstado;
     }
 

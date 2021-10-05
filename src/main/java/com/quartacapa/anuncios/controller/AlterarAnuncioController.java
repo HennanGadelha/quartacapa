@@ -47,7 +47,7 @@ public class AlterarAnuncioController {
                         anuncio.getLivro().getEditora(),
                         anuncio.getLivro().getAno(),
                         anuncio.getLivro().getValor(),
-                        anuncio.getLivro().getDescricaoEstado(),
+                        anuncio.getLivro().getDescricaoEstado().toString(),
                         anuncio.getLivro().getDisponivelParaDoacao(),
                         anuncio.getLivro().getDisciplina().getNome(),
                         anuncio.getUsuario().getNome(),

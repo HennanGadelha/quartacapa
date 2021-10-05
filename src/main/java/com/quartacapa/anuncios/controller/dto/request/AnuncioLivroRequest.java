@@ -4,6 +4,7 @@ import com.quartacapa.anuncios.model.Anuncio;
 import com.quartacapa.anuncios.model.AnuncioStatusEnum;
 import com.quartacapa.disciplina.model.Disciplina;
 import com.quartacapa.livro.model.AnoEscolarEnum;
+import com.quartacapa.livro.model.DescricaoEstadoEnum;
 import com.quartacapa.livro.model.Livro;
 import com.quartacapa.usuario.model.Usuario;
 
@@ -22,11 +23,10 @@ public class AnuncioLivroRequest {
     private Integer ano;
     @NotNull @Min(0) @Digits(integer = 3, fraction = 2)
     private BigDecimal valor;
-    @NotNull @NotEmpty @NotBlank
-    private String descricaoEstado;
     @NotNull
     private Boolean disponivelParaDoacao;
     private String idDisciplina;
+    private DescricaoEstadoEnum descricaoEstado;
     private AnoEscolarEnum anoEscolar;
 
 
@@ -71,7 +71,7 @@ public class AnuncioLivroRequest {
                                String editora,
                                Integer ano,
                                BigDecimal valor,
-                               String descricaoEstado,
+                               DescricaoEstadoEnum descricaoEstado,
                                Boolean disponivelParaDoacao,
                                String idDisciplina,
                                AnoEscolarEnum anoEscolar,
@@ -121,7 +121,7 @@ public class AnuncioLivroRequest {
         return valor;
     }
 
-    public String getDescricaoEstado() {
+    public DescricaoEstadoEnum getDescricaoEstado() {
         return descricaoEstado;
     }
 

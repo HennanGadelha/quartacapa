@@ -22,7 +22,6 @@ public class AnuncioResponse {
     private String editora;
     private Integer ano;
     private BigDecimal valor;
-    private String descricaoEstadoDoLivro;
     private Boolean disponivelParaDoacao;
     private String disciplina;
 
@@ -35,6 +34,9 @@ public class AnuncioResponse {
 
     @Enumerated(EnumType.STRING)
     private String anoEscolar;
+
+    @Enumerated(EnumType.STRING)
+    private String descricaoEstado;
 
 
 
@@ -52,7 +54,7 @@ public class AnuncioResponse {
                            String editora,
                            Integer ano,
                            BigDecimal valor,
-                           String descricaoEstadoDoLivro,
+                           String descricaoEstado,
                            Boolean disponivelParaDoacao,
                            String disciplina,
                            String nome,
@@ -72,7 +74,7 @@ public class AnuncioResponse {
         this.editora = editora;
         this.ano = ano;
         this.valor = valor;
-        this.descricaoEstadoDoLivro = descricaoEstadoDoLivro;
+        this.descricaoEstado = descricaoEstado;
         this.disponivelParaDoacao = disponivelParaDoacao;
         this.disciplina = disciplina;
         this.nome = nome;
@@ -124,8 +126,8 @@ public class AnuncioResponse {
         return valor;
     }
 
-    public String getDescricaoEstadoDoLivro() {
-        return descricaoEstadoDoLivro;
+    public String getDescricaoEstado() {
+        return descricaoEstado;
     }
 
     public Boolean getDisponivelParaDoacao() {

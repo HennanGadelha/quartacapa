@@ -1,6 +1,7 @@
 package com.quartacapa.livro.controllers.dto;
 
 import com.quartacapa.livro.model.AnoEscolarEnum;
+import com.quartacapa.livro.model.DescricaoEstadoEnum;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -15,9 +16,11 @@ public class LivroResponse {
     private String editora;
     private Integer ano;
     private BigDecimal valor;
-    private String descricaoEstado;
     private Boolean disponivelParaDoacao;
     private String disciplina;
+
+    @Enumerated(EnumType.STRING)
+    private String descricaoEstado;
 
     @Enumerated(EnumType.STRING)
     private String anoEscolar;

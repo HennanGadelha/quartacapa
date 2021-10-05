@@ -42,7 +42,7 @@ public class BuscarLivroPorIdController {
                         livro.getEditora(),
                         livro.getAno(),
                         livro.getValor(),
-                        livro.getDescricaoEstado(),
+                        livro.getDescricaoEstado().toString(),
                         livro.getDisponivelParaDoacao(),
                         livro.getAnoEscolar().toString(),
                         livro.getDisciplina().getNome());

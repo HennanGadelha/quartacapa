@@ -2,6 +2,7 @@ package com.quartacapa.livro.controllers.dto;
 
 import com.quartacapa.disciplina.model.Disciplina;
 import com.quartacapa.livro.model.AnoEscolarEnum;
+import com.quartacapa.livro.model.DescricaoEstadoEnum;
 import com.quartacapa.livro.model.Livro;
 
 import javax.validation.constraints.NotBlank;
@@ -22,7 +23,7 @@ public class LivroRequest {
     @NotNull @Positive
     private BigDecimal valor;
     @NotNull @NotEmpty @NotBlank
-    private String descricaoEstado;
+    private DescricaoEstadoEnum descricaoEstado;
     @NotNull
     private Boolean disponivelParaDoacao;
 
@@ -39,7 +40,7 @@ public class LivroRequest {
                         String editora,
                         Integer ano,
                         BigDecimal valor,
-                        String descricaoEstado,
+                        DescricaoEstadoEnum descricaoEstado,
                         Boolean disponivelParaDoacao,
                         AnoEscolarEnum anoEscolar,
                         String idDisciplina) {
@@ -95,7 +96,7 @@ public class LivroRequest {
         return valor;
     }
 
-    public String getDescricaoEstado() {
+    public DescricaoEstadoEnum getDescricaoEstado() {
         return descricaoEstado;
     }
 
