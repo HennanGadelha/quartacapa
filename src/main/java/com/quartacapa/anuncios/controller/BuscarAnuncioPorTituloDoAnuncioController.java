@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping(("/api/v1/anuncios"))
 @Api(tags = "Anúncios")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://quarta-capa.vercel.app/")
 public class BuscarAnuncioPorTituloDoAnuncioController {
 
     @Autowired

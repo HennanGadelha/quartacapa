@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(("/api/v1/usuarios"))
 @Api(tags = "Usuários")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://quarta-capa.vercel.app/")
 public class DeletarUsuarioController {
 
     @Autowired

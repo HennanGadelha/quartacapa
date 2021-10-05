@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping(("/api/v1/usuarios"))
 @Api(tags = "Usuários")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://quarta-capa.vercel.app/")
 public class ListarTodosUsuariosController {
 
     @Autowired

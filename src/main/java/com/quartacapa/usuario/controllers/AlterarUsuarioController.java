@@ -17,7 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping(("/api/v1/usuarios"))
 @Api(tags = "Usuários")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://quarta-capa.vercel.app/")
 public class AlterarUsuarioController {
 
     @Autowired

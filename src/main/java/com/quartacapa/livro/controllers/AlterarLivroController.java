@@ -19,7 +19,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/livros")
 @Api(tags = "Livros")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://quarta-capa.vercel.app/")
 public class AlterarLivroController {
 
 
