@@ -20,7 +20,7 @@ public class AnuncioLivroRequest {
     private String editora;
     @NotNull @Positive @Digits(integer = 4, fraction = 0)
     private Integer ano;
-    @NotNull @Positive @Digits(integer = 3, fraction = 2)
+    @NotNull @Min(0) @Digits(integer = 3, fraction = 2)
     private BigDecimal valor;
     @NotNull @NotEmpty @NotBlank
     private String descricaoEstado;
