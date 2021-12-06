@@ -1,4 +1,4 @@
-package com.quartacapa.disciplina.controllers.dto;
+package com.quartacapa.livro.disciplina.controllers.dto;
 
 public class DisciplinaResponse {
 

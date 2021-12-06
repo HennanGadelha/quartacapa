@@ -1,7 +1,5 @@
 package com.quartacapa.livro.controllers.dto;
 
-import com.quartacapa.livro.model.AnoEscolarEnum;
-
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.math.BigDecimal;

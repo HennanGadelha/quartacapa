@@ -1,8 +1,8 @@
 package com.quartacapa.livro.controllers.dto;
 
-import com.quartacapa.disciplina.model.Disciplina;
-import com.quartacapa.livro.model.AnoEscolarEnum;
-import com.quartacapa.livro.model.Livro;
+import com.quartacapa.livro.disciplina.Disciplina;
+import com.quartacapa.livro.AnoEscolarEnum;
+import com.quartacapa.livro.Livro;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;

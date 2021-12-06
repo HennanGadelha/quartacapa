@@ -1,9 +1,9 @@
-package com.quartacapa.disciplina.controllers;
+package com.quartacapa.livro.disciplina.controllers;
 
-import com.quartacapa.disciplina.controllers.dto.DisciplinaRequest;
-import com.quartacapa.disciplina.controllers.dto.DisciplinaResponse;
-import com.quartacapa.disciplina.model.Disciplina;
-import com.quartacapa.disciplina.repository.DisciplinaRepository;
+import com.quartacapa.livro.disciplina.controllers.dto.DisciplinaRequest;
+import com.quartacapa.livro.disciplina.controllers.dto.DisciplinaResponse;
+import com.quartacapa.livro.disciplina.Disciplina;
+import com.quartacapa.livro.disciplina.DisciplinaRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

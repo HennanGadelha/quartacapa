@@ -1,7 +1,7 @@
 package com.quartacapa.livro.controllers;
 
 import com.quartacapa.livro.controllers.dto.LivroResponse;
-import com.quartacapa.livro.repository.LivroRepository;
+import com.quartacapa.livro.LivroRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

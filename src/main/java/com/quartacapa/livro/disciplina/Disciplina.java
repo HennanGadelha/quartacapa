@@ -1,10 +1,9 @@
-package com.quartacapa.disciplina.model;
+package com.quartacapa.livro.disciplina;
 
-import com.quartacapa.livro.model.Livro;
+import com.quartacapa.livro.Livro;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;

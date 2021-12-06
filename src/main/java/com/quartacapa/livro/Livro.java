@@ -1,7 +1,6 @@
-package com.quartacapa.livro.model;
+package com.quartacapa.livro;
 
-import com.quartacapa.anuncios.model.Anuncio;
-import com.quartacapa.disciplina.model.Disciplina;
+import com.quartacapa.livro.disciplina.Disciplina;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

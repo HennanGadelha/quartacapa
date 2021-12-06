@@ -1,6 +1,5 @@
-package com.quartacapa.disciplina.repository;
+package com.quartacapa.livro.disciplina;
 
-import com.quartacapa.disciplina.model.Disciplina;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

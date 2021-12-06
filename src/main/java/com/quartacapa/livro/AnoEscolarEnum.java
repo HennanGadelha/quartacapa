@@ -1,4 +1,4 @@
-package com.quartacapa.livro.model;
+package com.quartacapa.livro;
 
 public enum AnoEscolarEnum {
 

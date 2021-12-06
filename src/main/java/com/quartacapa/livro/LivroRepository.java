@@ -1,6 +1,6 @@
-package com.quartacapa.livro.repository;
+package com.quartacapa.livro;
 
-import com.quartacapa.livro.model.Livro;
+import com.quartacapa.livro.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

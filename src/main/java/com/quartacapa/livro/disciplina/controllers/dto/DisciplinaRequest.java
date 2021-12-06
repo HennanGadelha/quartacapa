@@ -1,7 +1,7 @@
-package com.quartacapa.disciplina.controllers.dto;
+package com.quartacapa.livro.disciplina.controllers.dto;
 
 import com.quartacapa.config.validacoes.uniqueValue.UniqueValue;
-import com.quartacapa.disciplina.model.Disciplina;
+import com.quartacapa.livro.disciplina.Disciplina;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;

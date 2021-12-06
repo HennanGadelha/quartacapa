@@ -1,6 +1,6 @@
 package com.quartacapa.anuncios.model;
 
-import com.quartacapa.livro.model.Livro;
+import com.quartacapa.livro.Livro;
 import com.quartacapa.usuario.Usuario;
 
 import javax.persistence.*;
