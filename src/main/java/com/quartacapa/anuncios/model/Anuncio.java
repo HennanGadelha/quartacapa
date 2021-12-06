@@ -1,7 +1,7 @@
 package com.quartacapa.anuncios.model;
 
 import com.quartacapa.livro.model.Livro;
-import com.quartacapa.usuario.model.Usuario;
+import com.quartacapa.usuario.Usuario;
 
 import javax.persistence.*;
 import java.time.LocalDate;

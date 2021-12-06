@@ -5,7 +5,7 @@ import com.quartacapa.anuncios.model.AnuncioStatusEnum;
 import com.quartacapa.disciplina.model.Disciplina;
 import com.quartacapa.livro.model.AnoEscolarEnum;
 import com.quartacapa.livro.model.Livro;
-import com.quartacapa.usuario.model.Usuario;
+import com.quartacapa.usuario.Usuario;
 
 
 import javax.validation.constraints.*;

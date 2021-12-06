@@ -1,4 +1,4 @@
-package com.quartacapa.instituicao.controllers.dto;
+package com.quartacapa.usuario.instituicao.controllers.dto;
 
 public class InstituicaoResponse {
 

@@ -1,11 +1,13 @@
-package com.quartacapa.usuario.model;
+package com.quartacapa.usuario;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.quartacapa.anuncios.model.Anuncio;
+import com.quartacapa.usuario.instituicao.Instituicao;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -20,7 +22,8 @@ public class Usuario {
     private String cpf;
     private String numeroCelular;
 
-    //lista de anuncios
+    @OneToOne
+    private Instituicao instituicao;
 
     @JsonIgnore
     @OneToMany(mappedBy = "usuario")
@@ -29,12 +32,13 @@ public class Usuario {
     @Deprecated
     public Usuario(){}
 
-    public Usuario(String nome,String email,String cpf, String numeroCelular) {
+    public Usuario(String nome,String email,String cpf, String numeroCelular, Instituicao instituicao) {
         this.id = UUID.randomUUID().toString();
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.numeroCelular = numeroCelular;
+        this.instituicao = instituicao;
     }
 
     public String getId() {
@@ -81,4 +85,11 @@ public class Usuario {
         this.anuncios.add(anuncio);
     }
 
+    public Instituicao getInstituicao() {
+        return instituicao;
+    }
+
+    public void setInstituicao(Instituicao instituicao) {
+        this.instituicao = instituicao;
+    }
 }

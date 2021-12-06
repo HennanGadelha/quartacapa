@@ -1,8 +1,8 @@
 package com.quartacapa.usuario.controllers.dto.request;
 
 import com.quartacapa.config.validacoes.uniqueValue.UniqueValue;
-import com.quartacapa.instituicao.model.Instituicao;
-import com.quartacapa.usuario.model.Usuario;
+import com.quartacapa.usuario.instituicao.Instituicao;
+import com.quartacapa.usuario.Usuario;
 import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.constraints.Email;
@@ -42,8 +42,8 @@ public class InstituicaoUsuarioRequest {
         return new Instituicao(this.nomeDaInstituicao);
     }
 
-    public Usuario toModel(){
-        return new Usuario(this.nomeDoVendedor, this.email,this.cpf,this.numeroCelular);
+    public Usuario toModel(Instituicao instituicao){
+        return new Usuario(this.nomeDoVendedor, this.email,this.cpf,this.numeroCelular,instituicao);
     }
 
     public String getNomeDaInstituicao() {

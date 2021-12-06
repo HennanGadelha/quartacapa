@@ -1,9 +1,9 @@
-package com.quartacapa.instituicao.controllers;
+package com.quartacapa.usuario.instituicao.controllers;
 
-import com.quartacapa.instituicao.controllers.dto.InstituicaoRequest;
-import com.quartacapa.instituicao.controllers.dto.InstituicaoResponse;
-import com.quartacapa.instituicao.model.Instituicao;
-import com.quartacapa.instituicao.repository.InstituicaoRepository;
+import com.quartacapa.usuario.instituicao.controllers.dto.InstituicaoRequest;
+import com.quartacapa.usuario.instituicao.controllers.dto.InstituicaoResponse;
+import com.quartacapa.usuario.instituicao.Instituicao;
+import com.quartacapa.usuario.instituicao.InstituicaoRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

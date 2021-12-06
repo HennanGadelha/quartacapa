@@ -1,8 +1,5 @@
 package com.quartacapa.livro.controllers;
 
-import com.quartacapa.instituicao.controllers.dto.InstituicaoResponse;
-import com.quartacapa.instituicao.model.Instituicao;
-import com.quartacapa.instituicao.repository.InstituicaoRepository;
 import com.quartacapa.livro.controllers.dto.LivroResponse;
 import com.quartacapa.livro.model.Livro;
 import com.quartacapa.livro.repository.LivroRepository;

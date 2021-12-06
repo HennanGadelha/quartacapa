@@ -1,12 +1,11 @@
 package com.quartacapa.usuario.controllers;
 
-import com.quartacapa.instituicao.model.Instituicao;
-import com.quartacapa.instituicao.repository.InstituicaoRepository;
+import com.quartacapa.usuario.instituicao.Instituicao;
+import com.quartacapa.usuario.instituicao.InstituicaoRepository;
 import com.quartacapa.usuario.controllers.dto.request.InstituicaoUsuarioRequest;
-import com.quartacapa.usuario.controllers.dto.request.UsuarioRequest;
 import com.quartacapa.usuario.controllers.dto.response.UsuarioResponse;
-import com.quartacapa.usuario.model.Usuario;
-import com.quartacapa.usuario.repository.UsuarioRepository;
+import com.quartacapa.usuario.Usuario;
+import com.quartacapa.usuario.UsuarioRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +35,8 @@ public class CadastrarUsuarioController {
     public ResponseEntity<?> cadastrarUsuario(@RequestBody @Valid InstituicaoUsuarioRequest request){
 
         Instituicao instituicao = request.toInstituicao();
-        Usuario usuario = request.toModel();
+        Usuario usuario = request.toModel(instituicao);
 
-        instituicaoRepository.save(instituicao);
         repository.save(usuario);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")

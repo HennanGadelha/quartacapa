@@ -1,8 +1,7 @@
 package com.quartacapa.usuario.controllers.dto.request;
 
 import com.quartacapa.config.validacoes.uniqueValue.UniqueValue;
-import com.quartacapa.instituicao.model.Instituicao;
-import com.quartacapa.usuario.model.Usuario;
+import com.quartacapa.usuario.Usuario;
 import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.constraints.Email;

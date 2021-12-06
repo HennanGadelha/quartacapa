@@ -1,7 +1,7 @@
-package com.quartacapa.instituicao.controllers.dto;
+package com.quartacapa.usuario.instituicao.controllers.dto;
 
 import com.quartacapa.config.validacoes.uniqueValue.UniqueValue;
-import com.quartacapa.instituicao.model.Instituicao;
+import com.quartacapa.usuario.instituicao.Instituicao;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;

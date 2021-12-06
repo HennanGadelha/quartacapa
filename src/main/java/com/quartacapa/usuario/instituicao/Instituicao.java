@@ -1,4 +1,4 @@
-package com.quartacapa.instituicao.model;
+package com.quartacapa.usuario.instituicao;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
