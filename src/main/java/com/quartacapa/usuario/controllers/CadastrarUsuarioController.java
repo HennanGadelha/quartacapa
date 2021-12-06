@@ -1,5 +1,8 @@
 package com.quartacapa.usuario.controllers;
 
+import com.quartacapa.instituicao.model.Instituicao;
+import com.quartacapa.instituicao.repository.InstituicaoRepository;
+import com.quartacapa.usuario.controllers.dto.request.InstituicaoUsuarioRequest;
 import com.quartacapa.usuario.controllers.dto.request.UsuarioRequest;
 import com.quartacapa.usuario.controllers.dto.response.UsuarioResponse;
 import com.quartacapa.usuario.model.Usuario;
@@ -8,6 +11,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -23,12 +27,18 @@ public class CadastrarUsuarioController {
     @Autowired
     private UsuarioRepository repository;
 
+    @Autowired
+    private InstituicaoRepository instituicaoRepository;
+
+    @Transactional(readOnly = true)
     @PostMapping
     @ApiOperation(value = "Salva o cadastro inicial de um novo Livro")
-    public ResponseEntity<?> cadastrarUsuario(@RequestBody @Valid UsuarioRequest request){
+    public ResponseEntity<?> cadastrarUsuario(@RequestBody @Valid InstituicaoUsuarioRequest request){
 
+        Instituicao instituicao = request.toInstituicao();
         Usuario usuario = request.toModel();
 
+        instituicaoRepository.save(instituicao);
         repository.save(usuario);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -38,7 +48,5 @@ public class CadastrarUsuarioController {
                 usuario.getCpf(),usuario.getNumeroCelular(), usuario.getAnuncios());
 
         return ResponseEntity.created(uri).body(response);
-
     }
-
 }

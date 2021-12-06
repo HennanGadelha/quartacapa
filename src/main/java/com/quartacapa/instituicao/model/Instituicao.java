@@ -11,10 +11,6 @@ public class Instituicao {
     private String id;
     private String nome;
 
-    // utilizou a @entity para mapear a classe
-    // utilizou o @id para mapear o id
-    // usar construtor vazio
-
     @Deprecated
     public Instituicao(){}
 
