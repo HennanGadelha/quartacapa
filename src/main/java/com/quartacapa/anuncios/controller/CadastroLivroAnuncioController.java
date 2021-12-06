@@ -28,7 +28,6 @@ import java.util.Optional;
 @CrossOrigin(origins = "https://quarta-capa.vercel.app/")
 public class CadastroLivroAnuncioController {
 
-
     @Autowired
     LivroRepository livroRepository;
 
@@ -40,7 +39,6 @@ public class CadastroLivroAnuncioController {
 
     @Autowired
     UsuarioRepository usuarioRepository;
-
 
     @PostMapping
     public ResponseEntity<?> cadastroAnuncio(@RequestBody @Valid AnuncioLivroRequest request ) throws EntidadeJaExistenteException {
