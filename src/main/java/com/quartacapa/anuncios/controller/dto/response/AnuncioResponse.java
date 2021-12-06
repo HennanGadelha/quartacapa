@@ -1,12 +1,8 @@
 package com.quartacapa.anuncios.controller.dto.response;
 
-import com.quartacapa.anuncios.model.Anuncio;
-
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AnuncioResponse {
 

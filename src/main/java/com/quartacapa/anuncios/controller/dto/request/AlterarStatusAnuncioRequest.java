@@ -1,6 +1,6 @@
 package com.quartacapa.anuncios.controller.dto.request;
 
-import com.quartacapa.anuncios.model.AnuncioStatusEnum;
+import com.quartacapa.anuncios.AnuncioStatusEnum;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;

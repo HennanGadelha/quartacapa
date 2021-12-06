@@ -1,11 +1,11 @@
 package com.quartacapa.anuncios.controller.dto.request;
 
-import com.quartacapa.anuncios.model.Anuncio;
-import com.quartacapa.anuncios.model.AnuncioStatusEnum;
-import com.quartacapa.disciplina.model.Disciplina;
-import com.quartacapa.livro.model.AnoEscolarEnum;
-import com.quartacapa.livro.model.Livro;
-import com.quartacapa.usuario.model.Usuario;
+import com.quartacapa.anuncios.Anuncio;
+import com.quartacapa.anuncios.AnuncioStatusEnum;
+import com.quartacapa.livro.disciplina.Disciplina;
+import com.quartacapa.livro.AnoEscolarEnum;
+import com.quartacapa.livro.Livro;
+import com.quartacapa.usuario.Usuario;
 
 
 import javax.validation.constraints.*;

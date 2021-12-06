@@ -2,8 +2,8 @@ package com.quartacapa.anuncios.controller;
 
 import com.quartacapa.anuncios.controller.dto.request.AlterarStatusAnuncioRequest;
 import com.quartacapa.anuncios.controller.dto.response.AnuncioResponse;
-import com.quartacapa.anuncios.model.Anuncio;
-import com.quartacapa.anuncios.repository.AnuncioRepository;
+import com.quartacapa.anuncios.Anuncio;
+import com.quartacapa.anuncios.AnuncioRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.quartacapa.usuario.controllers.dto.response;
 
-import com.quartacapa.anuncios.model.Anuncio;
+import com.quartacapa.anuncios.Anuncio;
 
 import java.util.ArrayList;
 import java.util.List;
