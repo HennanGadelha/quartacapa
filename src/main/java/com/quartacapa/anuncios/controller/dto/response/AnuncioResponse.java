@@ -13,7 +13,7 @@ public class AnuncioResponse {
     private String idDoAnuncio;
     private Boolean destaque;
 
-    private String instituicao;
+    //private String instituicao;
     private String titulo;
     private String descricao;
     private String fotoLivro;
@@ -45,7 +45,7 @@ public class AnuncioResponse {
 
     public AnuncioResponse(String idDoAnuncio,
                            Boolean destaque,
-                           String instituicao,
+                           //String instituicao,
                            String titulo,
                            String anoEscolar,
                            String descricao,
@@ -67,7 +67,7 @@ public class AnuncioResponse {
 
         this.idDoAnuncio = idDoAnuncio;
         this.destaque = destaque;
-        this.instituicao = instituicao;
+        //this.instituicao = instituicao;
         this.titulo = titulo;
         this.anoEscolar = anoEscolar;
         this.descricao = descricao;
@@ -96,9 +96,9 @@ public class AnuncioResponse {
         return destaque;
     }
 
-    public String getInstituicao() {
-        return instituicao;
-    }
+//    public String getInstituicao() {
+//        return instituicao;
+//    }
 
     public String getTitulo() {
         return titulo;

@@ -38,7 +38,7 @@ public class AlterarStatusAnuncioController {
                 new AnuncioResponse(
                         anuncio.getId(),
                         anuncio.getDestaque(),
-                        anuncio.getUsuario().getInstituicao().getNome(),
+                        //anuncio.getUsuario().getInstituicao().getNome(),
                         anuncio.getTitulo(),
                         anuncio.getLivro().getAnoEscolar().toString(),
                         anuncio.getDescricao(),
