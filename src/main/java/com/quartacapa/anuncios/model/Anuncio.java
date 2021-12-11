@@ -15,6 +15,7 @@ public class Anuncio {
     private LocalDate criadoEm;
     private String titulo;
     private String descricao;
+    private Boolean destaque;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     private Livro livro;
@@ -30,7 +31,7 @@ public class Anuncio {
     @Deprecated
     public Anuncio(){}
 
-    public Anuncio(String titulo, String descricao, Livro livro, Usuario usuario, String fotoLivro, AnuncioStatusEnum anuncioStatus) {
+    public Anuncio(String titulo, String descricao, Livro livro, Usuario usuario, String fotoLivro, AnuncioStatusEnum anuncioStatus, Boolean destaque) {
 
         this.id = UUID.randomUUID().toString();
         this.criadoEm = LocalDate.now();
@@ -40,6 +41,7 @@ public class Anuncio {
         this.usuario = usuario;
         this.fotoLivro = fotoLivro;
         this.anuncioStatus = anuncioStatus;
+        this.destaque = destaque;
     }
 
     public String getId() {
@@ -68,6 +70,14 @@ public class Anuncio {
 
     public String getFotoLivro() {
         return fotoLivro;
+    }
+
+    public Boolean getDestaque() {
+        return destaque;
+    }
+
+    public void setDestaque(Boolean destaque) {
+        this.destaque = destaque;
     }
 
     public AnuncioStatusEnum getAnuncioStatus() {

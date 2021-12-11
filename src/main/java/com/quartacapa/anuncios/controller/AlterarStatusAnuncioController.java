@@ -37,6 +37,7 @@ public class AlterarStatusAnuncioController {
         AnuncioResponse response =
                 new AnuncioResponse(
                         anuncio.getId(),
+                        anuncio.getDestaque(),
                         anuncio.getTitulo(),
                         anuncio.getLivro().getAnoEscolar().toString(),
                         anuncio.getDescricao(),
@@ -55,11 +56,7 @@ public class AlterarStatusAnuncioController {
                         anuncio.getUsuario().getNumeroCelular(),
                         anuncio.getAnuncioStatus().toString());
 
-
         return ResponseEntity.ok().body(response);
-
-
-
     }
 
 

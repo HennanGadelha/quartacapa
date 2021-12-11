@@ -11,6 +11,8 @@ import java.util.List;
 public class AnuncioResponse {
 
     private String idDoAnuncio;
+    private Boolean destaque;
+
 
     private String titulo;
     private String descricao;
@@ -42,6 +44,7 @@ public class AnuncioResponse {
     public AnuncioResponse(){}
 
     public AnuncioResponse(String idDoAnuncio,
+                           Boolean destaque,
                            String titulo,
                            String anoEscolar,
                            String descricao,
@@ -62,6 +65,7 @@ public class AnuncioResponse {
 
 
         this.idDoAnuncio = idDoAnuncio;
+        this.destaque = destaque;
         this.titulo = titulo;
         this.anoEscolar = anoEscolar;
         this.descricao = descricao;
@@ -84,6 +88,10 @@ public class AnuncioResponse {
 
     public String getIdDoAnuncio() {
         return idDoAnuncio;
+    }
+
+    public Boolean getDestaque() {
+        return destaque;
     }
 
     public String getTitulo() {

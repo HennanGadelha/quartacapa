@@ -14,34 +14,48 @@ import java.math.BigDecimal;
 public class AnuncioLivroRequest {
 
     private String isbn;
-    @NotNull @NotEmpty @NotBlank
+    @NotNull
+    @NotEmpty
+    @NotBlank
     private String titulo;
-    @NotNull @NotEmpty @NotBlank
+    @NotNull
+    @NotEmpty
+    @NotBlank
     private String autor;
     private String editora;
-    @NotNull @Positive @Digits(integer = 4, fraction = 0)
+    @NotNull
+    @Positive
+    @Digits(integer = 4, fraction = 0)
     private Integer ano;
-    @NotNull @Min(0) @Digits(integer = 3, fraction = 2)
+    @NotNull
+    @Min(0)
+    @Digits(integer = 3, fraction = 2)
     private BigDecimal valor;
-    @NotNull @NotEmpty @NotBlank
+    @NotNull
+    @NotEmpty
+    @NotBlank
     private String descricaoEstado;
     @NotNull
     private Boolean disponivelParaDoacao;
     private String idDisciplina;
     private AnoEscolarEnum anoEscolar;
+    private Boolean destaque;
 
 
-
-    @NotNull @NotEmpty @NotBlank
+    @NotNull
+    @NotEmpty
+    @NotBlank
     private String tituloDoAnuncio;
-    @NotNull @NotEmpty @NotBlank
+    @NotNull
+    @NotEmpty
+    @NotBlank
     private String descricao;
     private String fotoLivro;
     private AnuncioStatusEnum anuncioStatus;
     private String idUsuario;
 
 
-    public Livro toLivro(Disciplina disciplina){
+    public Livro toLivro(Disciplina disciplina) {
         return new Livro(this.isbn,
                 this.titulo,
                 this.autor,
@@ -54,17 +68,19 @@ public class AnuncioLivroRequest {
                 disciplina);
     }
 
-    public Anuncio toAnuncio(Livro livro, Usuario usuario){
+    public Anuncio toAnuncio(Livro livro, Usuario usuario) {
         return new Anuncio(this.tituloDoAnuncio,
                 this.descricao,
                 livro,
                 usuario,
                 this.fotoLivro,
-                this.anuncioStatus);
+                this.anuncioStatus,
+                this.destaque);
     }
 
     @Deprecated
-    public AnuncioLivroRequest(){}
+    public AnuncioLivroRequest() {
+    }
 
     public AnuncioLivroRequest(String isbn,
                                String titulo,
@@ -76,6 +92,7 @@ public class AnuncioLivroRequest {
                                Boolean disponivelParaDoacao,
                                String idDisciplina,
                                AnoEscolarEnum anoEscolar,
+                               Boolean destaque,
                                String tituloDoAnuncio,
                                String descricao,
                                String fotoLivro,
@@ -91,6 +108,7 @@ public class AnuncioLivroRequest {
         this.disponivelParaDoacao = disponivelParaDoacao;
         this.idDisciplina = idDisciplina;
         this.anoEscolar = anoEscolar;
+        this.destaque = destaque;
         this.tituloDoAnuncio = tituloDoAnuncio;
         this.descricao = descricao;
         this.fotoLivro = fotoLivro;
@@ -151,7 +169,13 @@ public class AnuncioLivroRequest {
         return fotoLivro;
     }
 
-    public AnuncioStatusEnum getAnuncioStatus() {return anuncioStatus; }
+    public AnuncioStatusEnum getAnuncioStatus() {
+        return anuncioStatus;
+    }
+
+    public Boolean getDestaque() {
+        return destaque;
+    }
 
     public String getIdUsuario() {
         return idUsuario;

@@ -31,6 +31,7 @@ public class BuscarAnuncioPorTituloDoAnuncioController {
 
         AnuncioResponse response =
                 new AnuncioResponse(anuncio.getId(),
+                        anuncio.getDestaque(),
                         anuncio.getTitulo(),
                         anuncio.getLivro().getAnoEscolar().toString(),
                         anuncio.getDescricao(),
