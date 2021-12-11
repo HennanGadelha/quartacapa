@@ -35,8 +35,8 @@ public class CadastrarUsuarioController {
     public ResponseEntity<?> cadastrarUsuario(@RequestBody @Valid InstituicaoUsuarioRequest request){
 
         Instituicao instituicao = request.toInstituicao();
+        instituicaoRepository.save(instituicao);
         Usuario usuario = request.toModel(instituicao);
-
         repository.save(usuario);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
