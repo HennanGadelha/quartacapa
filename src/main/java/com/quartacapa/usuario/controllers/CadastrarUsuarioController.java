@@ -29,7 +29,6 @@ public class CadastrarUsuarioController {
     @Autowired
     private InstituicaoRepository instituicaoRepository;
 
-    @Transactional(readOnly = true)
     @PostMapping
     @ApiOperation(value = "Salva o cadastro inicial de um novo Livro")
     public ResponseEntity<?> cadastrarUsuario(@RequestBody @Valid InstituicaoUsuarioRequest request){
